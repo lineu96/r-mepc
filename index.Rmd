@@ -1,0 +1,111 @@
+---
+title: "Métodos Estatísticos em Pesquisa Científica"
+subtitle: "Apoio computacional em linguagem R"
+author: |
+ |
+ | Prof. Me. Lineu Alberto Cavazani de Freitas
+ 
+output:
+  html_document:                    
+    #toc: true                       
+    #toc_depth: 3                    
+    #toc_float:                      
+    #  collapsed: true
+    #  smooth_scroll: true
+    #number_sections: true           
+    theme: flatly
+    #spacelab
+    #default,cerulean,journal,flatly,readable,spacelab,
+    #united,cosmo,lumen,paper,sandstone,simplex,yeti
+    
+    highlight: espresso
+    #default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, and textmate
+    #css: styles.css                
+    fig_width: 7                    
+    fig_height: 6                   
+    fig_caption: true               
+    fig_align: 'center'
+    #code_folding: hide              
+#    keep_md: true
+---
+
+---
+
+Aulas em vídeo e materiais associados à linguagem R utilizados na disciplina transversal de Métodos Estatísticos em Pesquisa Científica (MEPC).
+
+Outros materiais selecionados de ofertas passadas podem ser acessados em http://www.leg.ufpr.br/transversal/.
+
+---
+
+Introdução ao R. (29/03/2023)
+
+ - [Vídeo](https://youtu.be/GjRTSdnsV-g), [Slides](slides/000-introducao.pdf), [Script](scripts/000-ambientacao.R).
+
+---
+
+Primeiros passos com R. (12/04/2023)
+
+ - [Vídeo](https://youtu.be/iylsxNCg6zU), [Slides](slides/100-ambientacao-primeiro-contato.pdf), [Script](scripts/000-ambientacao.R).
+
+---
+
+Análise exploratória usando R. (12/04/2023)
+
+ - [Vídeo](https://youtu.be/2L48tTyKF7w), [Script](scripts/100-descritiva.R).
+ 
+---
+
+Tabulação, importação e exportação de dados usando R. (19/04/2023)
+
+ - [Vídeo](https://youtu.be/WxashUIHoqs), [Slides](slides/200-tabulacao-importacao.pdf), [Script](scripts/200-importacao.R).
+
+---
+
+R como calculadora para alguns problemas de probabilidade. (26/04/2023)
+
+ - [Vídeo](https://youtu.be/I6fLg5UiIjI), [Script1](scripts/300-prob-animais.R), [Script2](scripts/301-dado-inter.R), [Script3](scripts/302-bayes-sorvete.R).
+
+---
+
+Distribuições de probabilidade no R (03/05/2023)
+
+ - [Vídeo](https://youtu.be/CxRO3c1e1VU), [Script](scripts/400-distribuicoes.R).
+
+---
+
+Ilustração de distribuição amostral e testes de hipóteses usando R. (10/05/2023)
+
+ - [Vídeo](https://youtu.be/w9q8-jEP7Qk), [Script 1](scripts/501-distribuicao-amostral-media.R), [Script 2](scripts/502-testes-de-hipoteses.R).
+
+---
+
+Análise exploratória e testes de hipóteses usando R. (24/05/2023)
+
+ - [Vídeo](https://youtu.be/4wAKH7JRCi4), [Script](scripts/503-testes-de-hipoteses-pratica.R).
+
+---
+
+Regressão linear com R. (31/05/2023)
+
+ - [Vídeo](https://youtu.be/frimH7TusQM), [Script](scripts/600-regressao-linear-multipla.R).
+
+---
+
+<center>
+
+<table><tr>
+
+<td> <img src="img/dest-texto-2.png" alt="Drawing" style="width: 250px;"/> </td>
+
+<td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td>
+
+<td> <img src="img/transversais.png" alt="Drawing" style="width: 300px;"/> </td>
+
+<td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td>
+
+<td> <img src="img/ufpr-transparent-600px.png" alt="Drawing" style="width: 200px;"/> </td>
+
+</center>
+
+
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>

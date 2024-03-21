@@ -1,0 +1,83 @@
+---
+title: \textbf{Título}
+subtitle: \textbf{subtítulo}
+author: Prof. Me. Lineu Alberto Cavazani de Freitas
+date: ""
+institute: |
+ | Métodos Estatísticos em Pesquisa Científica
+ | Apoio computacional em linguagem R
+ |
+ | Departamento de Estatística
+ | Laboratório de Estatística e Geoinformação
+graphics: yes
+classoption: [serif, professionalfont, usenames, dvipsnames, aspectratio = 169]
+# bibliography: references.bib
+# csl: ../config/ABNT_UFPR_2011-Mendeley.csl
+output:
+  beamer_presentation:
+    fig_caption: yes
+    fig_crop: no
+    highlight: haddock
+    includes:
+      # NOTE: background, color theme and logos are defined in `preamble-rmd-settings.tex`.
+      in_header: [config/preamble-settings-rmd.tex, config/preamble-global.tex, config/preamble-chunk-rmd.tex, config/preamble-commands.tex]
+    keep_tex: yes
+# http://rmarkdown.rstudio.com/beamer_presentation_format.html
+---
+
+```{r, include = FALSE}
+source("./config/setup.R")
+```
+
+## Duas colunas
+
+\beginAHalfColumn
+
+- Tópico 1.
+- Tópico 2.
+- Tópico 3.
+
+\endColumns
+\beginAHalfColumn
+
+- Tópico 4.
+- Tópico 5.
+- Tópico 6.
+
+\endColumns
+
+## Figuras
+
+```{r, echo = FALSE, out.width='60%', fig.align='center', fig.cap="Caption da figura."}
+knitr::include_graphics("./img/modelos_regressao.pdf")
+```
+
+## Blocos
+
+::: {.block}
+### Bloco 1 
+Texto bloco 1
+:::
+
+::: {.block}
+### Bloco 2 
+
+Texto bloco 2
+:::
+
+## Tabelas
+
+```{r, echo = FALSE}
+cap <- "Tabela "
+
+knitr::kable(head(iris), caption = cap, align = "lrr")
+```
+
+## Gráficos
+
+```{r, echo = FALSE, out.width = "12 cm", fig.dim = c(6, 3), fig.cap = cap}
+cap <- "Gráfico"
+
+plot(1)
+```
+

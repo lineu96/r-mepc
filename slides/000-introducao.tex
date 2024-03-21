@@ -1,0 +1,1315 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+  serif,
+  professionalfont,
+  usenames,
+  dvipsnames,
+  aspectratio = 169]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\newif\ifbibliography
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Definição do esquema de cores:
+% 1. UFPR - Azul com cinza.
+% 2. DEST - Roxo com cinza.
+% 3. LEG - Laranjado com cinza.
+\def\mycolorscheme{1}
+
+% Caminho para a imagem de fundo com aspecto 16x9.
+% \def\pathtobg{config/ufpr-fachada-baixo-1.jpg}
+% \def\pathtobg{config/ufpr-fundo.jpg}
+% \def\pathtobg{config/ufpr-fundo.jpg}
+\def\pathtobg{./config/ufpr-fundo-16x9.jpg}
+
+% \providecommand{\tightlist}{%
+%   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+% ATTENTION: Redefine o comando acima que é definido pelo template.
+% \renewcommand{\tightlist}{}
+\renewcommand{\tightlist}{%
+  \setlength{\itemsep}{0\baselineskip}
+  \setlength{\parskip}{0.25\baselineskip}
+}
+
+% Logo na capa.
+\titlegraphic{
+  %\vspace{-1em}
+  %\includegraphics[height=1.2cm]{config/dest-texto-2.png}\hspace{1em}
+  %\includegraphics[height=1.8cm]{config/dsbd-logo-2x2.png}\hspace{1em}
+  \includegraphics[height=1.8cm]{config/ufpr-transparent-600px.png}
+}
+%-----------------------------------------------------------------------
+
+% Palladio.
+% \usepackage[sc]{mathpazo}
+% \linespread{1.05}         % Palladio needs more leading (space between lines)
+% \usepackage[T1]{fontenc}
+
+% Kurier.
+% \usepackage[light, condensed, math]{kurier}
+% \usepackage[T1]{fontenc}
+
+% Iwona.
+% \usepackage[math, light, condensed]{iwona}
+
+% \usepackage{cmbright}
+% \usepackage[charter]{mathdesign}
+% \usepackage{palatino}
+
+% Roboto (with Iwona for maths).
+% \usepackage[math]{iwona}
+% \usepackage[sfdefault, light, condensed]{roboto}
+
+% Source Sans Pro (with Iwona for maths).
+% \usepackage[math]{iwona}
+% \usepackage[default, light]{sourcesanspro}
+
+% Lato (with Iwona for maths).
+% \usepackage[math]{iwona}
+% \usepackage[default]{lato}
+
+% Fira Sans (with Iwona for maths).
+\usepackage[math, light]{iwona}
+\usepackage[sfdefault,light]{FiraSans} %% option 'sfdefault' activates Fira Sans as the default text font
+\usepackage[T1]{fontenc}
+\renewcommand*\oldstylenums[1]{{\firaoldstyle #1}}
+
+% Font for code. ----------------------------
+% \usepackage[scaled=.75]{beramono}
+\usepackage{inconsolata}
+
+% ATTENTION: needs complile with xelatex: `$ xelatex file.tex`
+% \usepackage{fontspec}
+% \setmonofont{M+ 1m}
+% \setmonofont{M+ 1mn}
+% \setmonofont{M+ 2m}
+
+%-----------------------------------------------------------------------
+
+% \usepackage{lmodern}
+\usepackage{amssymb, amsmath}
+\usepackage[makeroom]{cancel}
+% \usepackage{ifxetex, ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\usepackage[utf8]{inputenc}
+\usepackage[shorthands=off,main=brazil]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{comment}
+\usepackage{icomma}
+
+%-----------------------------------------------------------------------
+% Algumas configurações.
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+% \providecommand{\tightlist}{%
+%   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+
+% Espaço vertical para o ambiente `quote`.
+\let\oldquote\quote
+\let\oldendquote\endquote
+\renewenvironment{quote}{%
+  \vspace{1em}\oldquote}{%
+  \oldendquote\vspace{1em}}
+
+%-----------------------------------------------------------------------
+% Espaçamento entre items para itemize, enumerate e description.
+
+% % itemize.
+% \let\itemopen\itemize
+% \let\itemclose\enditemize
+% \renewenvironment{itemize}{%
+%   \itemopen\addtolength{\itemsep}{0.25\baselineskip}}{\itemclose}
+%
+% % enumerate.
+% \let\enumopen\enumerate
+% \let\enumclose\endenumerate
+% \renewenvironment{enumerate}{%
+%   \enumopen\addtolength{\itemsep}{0.25\baselineskip}}{\enumclose}
+%
+% % description.
+% \let\descopen\description
+% \let\descclose\enddescription
+% \renewenvironment{description}{%
+%   \descopen\addtolength{\itemsep}{0.25\baselineskip}}{\descclose}
+
+%-----------------------------------------------------------------------
+
+% \usepackage[hang]{caption}
+\usepackage{caption}
+\captionsetup{font=footnotesize,
+  labelfont={color=mycolor1, footnotesize},
+  labelsep=period}
+
+% \providecommand{\tightlist}{%
+%   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+%-----------------------------------------------------------------------
+
+\usepackage{tikz}
+
+% \def\pathtobg{/home/walmes/Projects/templates/COMMON/ufpr-fundo.jpg}
+% \def\pathtobg{/home/walmes/Projects/templates/COMMON/ufpr-fundo-16x9.jpg}
+% \def\pathtobg{/home/walmes/Projects/templates/COMMON/ufpr-fachada-dir-1.jpg}
+% \def\pathtobg{/home/walmes/Projects/templates/COMMON/ufpr-fachada-esq-1.jpg}
+% \def\pathtobg{/home/walmes/Projects/templates/COMMON/ufpr-perto-1.jpg}
+% \def\pathtobg{/home/walmes/Projects/templates/COMMON/ufpr-fachada-baixo-1.jpg}
+
+\ifx\pathtobg\undefined
+\else
+  \usebackgroundtemplate{
+    \tikz[overlay, remember picture]
+    \node[% opacity=0.3,
+          at=(current page.south east),
+          anchor=south east,
+          inner sep=0pt] {
+            \includegraphics[height=\paperheight, width=\paperwidth]{\pathtobg}};
+  }
+\fi
+
+%-----------------------------------------------------------------------
+% Definições de esquema de cores.
+
+\ifx\mycolorscheme\undefined
+  % UFPR.
+  % http://www.color-hex.com/color-palette/2018
+  \definecolor{mycolor1}{HTML}{015c93} % Título.
+  \definecolor{mycolor2}{HTML}{363435} % Texto.
+  \definecolor{mycolor3}{HTML}{015c93} % Estrutura.
+  \definecolor{mycolor4}{HTML}{015c93} % Links.
+  \definecolor{mycolor5}{HTML}{CECAC5} % Preenchimentos.
+\else
+  \if\mycolorscheme1
+    % UFPR.
+    \definecolor{mycolor1}{HTML}{015c93} % Título.
+    \definecolor{mycolor2}{HTML}{363435} % Texto.
+    \definecolor{mycolor3}{HTML}{015c93} % Estrutura.
+    \definecolor{mycolor4}{HTML}{015c93} % Links.
+    \definecolor{mycolor5}{HTML}{CECAC5} % Preenchimentos.
+  \fi
+  \if\mycolorscheme2
+    % DEST.
+    \definecolor{mycolor1}{HTML}{2a0e72} % Título.
+    \definecolor{mycolor2}{HTML}{202E35} % Texto.
+    \definecolor{mycolor3}{HTML}{2a0e72} % Estrutura.
+    % \definecolor{mycolor3}{HTML}{8072a3} % Estrutura.
+    \definecolor{mycolor4}{HTML}{2a0e72} % Links.
+    % \definecolor{mycolor4}{HTML}{bfb9d1} % Links.
+    % \definecolor{mycolor5}{HTML}{AEA79F} % Preenchimentos.
+    \definecolor{mycolor5}{HTML}{CECAC5} % Preenchimentos.
+  \fi
+  \if\mycolorscheme3
+    % LEG.
+    \definecolor{mycolor2}{HTML}{363435} % Texto.
+    % \definecolor{mycolor1}{HTML}{ff8000} % Título.
+    % \definecolor{mycolor3}{HTML}{ff8000} % Estrutura.
+    % \definecolor{mycolor4}{HTML}{ff8000} % Links.
+    % \definecolor{mycolor1}{HTML}{E57300} % Título.
+    % \definecolor{mycolor3}{HTML}{E57300} % Estrutura.
+    % \definecolor{mycolor4}{HTML}{E57300} % Links.
+    \definecolor{mycolor1}{HTML}{F67014} % Título.
+    \definecolor{mycolor3}{HTML}{F67014} % Estrutura.
+    \definecolor{mycolor4}{HTML}{F67014} % Links.
+    % \definecolor{mycolor1}{HTML}{FE5C23} % Título.
+    % \definecolor{mycolor3}{HTML}{FE5C23} % Estrutura.
+    % \definecolor{mycolor4}{HTML}{FE5C23} % Links.
+    \definecolor{mycolor5}{HTML}{222222} % Preenchimentos.
+    \definecolor{mycolor5}{HTML}{383838} % Preenchimentos.
+  \fi
+\fi
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=mycolor4,
+  urlcolor=mycolor1,
+  citecolor=mycolor1
+}
+
+%-----------------------------------------------------------------------
+% ATTENTION: http://www.cpt.univ-mrs.fr/~masson/latex/Beamer-appearance-cheat-sheet.pdf
+
+\usetheme{Boadilla}
+\usecolortheme{default}
+
+% \setbeamersize{text margin left=7mm, text margin right=7mm}
+% \setbeamertemplate{frametitle}[default][left, leftskip=3mm]
+% \addtobeamertemplate{frametitle}{\vspace{0.5em}}{}
+
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+\setbeamertemplate{sections/subsections in toc}[ball]{}
+\setbeamertemplate{sections in toc}[ball]
+\setbeamercolor{section number projected}{bg=mycolor1, fg=white}
+\setbeamertemplate{blocks}[rounded]
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{frametitle continuation}{\gdef\beamer@frametitle{}}
+% \setbeamertemplate{frametitle}[default][center]
+% \setbeamertemplate{footline}[frame number]
+
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{itemize items}{\scriptsize\raise1.25pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}
+
+% Blocos.
+% \addtobeamertemplate{block begin}{\vskip -\bigskipamount}{}
+% \addtobeamertemplate{block end}{}{\vskip -\bigskipamount}
+\addtobeamertemplate{block begin}{\vspace{0.5em}}{}
+\addtobeamertemplate{block end}{}{\vspace{0.5em}}
+
+
+% Rodapé.
+\setbeamercolor{title in head/foot}{parent=subsection in head/foot}
+\setbeamercolor{author in head/foot}{bg=mycolor4, fg=white}
+\setbeamercolor{date in head/foot}{parent=subsection in head/foot, fg=mycolor3}
+
+% Cabeçalho.
+\setbeamercolor{section in head/foot}{bg=mycolor2, fg=mycolor4}
+\setbeamercolor{subsection in head/foot}{bg=mycolor2, fg=white}
+
+\setbeamercolor{title}{fg=mycolor1}       % Título dos slides.
+\setbeamercolor{titlelike}{fg=title}
+\setbeamercolor{subtitle}{fg=mycolor2}    % Subtítulo.
+\setbeamercolor{institute in head/foot}{parent=palette primary} % Instituição.
+\setbeamercolor{frametitle}{fg=mycolor1}  % De quadro.
+\setbeamercolor{structure}{fg=mycolor3}   % Listas e rodapé.
+\setbeamercolor{item projected}{bg=mycolor2}
+\setbeamercolor{block title}{bg=mycolor5, fg=mycolor2}
+\setbeamercolor{normal text}{fg=mycolor2} % Texto.
+\setbeamercolor{caption name}{fg=normal text.fg}
+% \setbeamercolor{footlinecolor}{fg=mycolor2, bg=mycolor5}
+% \setbeamercolor{section in head/foot}{fg=mycolor2, bg=mycolor5}
+\setbeamercolor{author in head/foot}{fg=white, bg=mycolor1}
+\setbeamercolor{section in foot}{fg=mycolor4, bg=mycolor5}
+\setbeamercolor{date in foot}{fg=mycolor4, bg=mycolor5}
+\setbeamercolor{block title}{fg=white, bg=mycolor1}
+\setbeamercolor{block body}{fg=black, bg=white!80!gray}
+\setbeamercolor{block body}{fg=black, bg=white!80!gray}
+
+% To remove empty brackets of \institution.
+\makeatletter
+\setbeamertemplate{footline}{
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[
+      wd=0.3\paperwidth, ht=2.25ex, dp=1ex, right]{author in head/foot}%
+      \usebeamerfont{author in head/foot}\insertshortauthor{}\hspace*{1ex}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[
+      wd=0.6\paperwidth, ht=2.25ex, dp=1ex, left]{section in foot}%
+      \usebeamerfont{title in head/foot}\hspace*{1ex}\insertshorttitle{}
+      % \usebeamerfont{title in head/foot}\hspace*{1ex}\insertframetitle{}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[
+      wd=0.1\paperwidth, ht=2.25ex, dp=1ex, right]{date in foot}%
+      \insertframenumber{}\hspace*{2ex}
+    \end{beamercolorbox}
+  }%
+  \vskip0pt%
+}
+\makeatother
+
+%-----------------------------------------------------------------------
+
+% \usepackage{hyphenat}
+\usepackage{changepage}
+
+% Slide para o título das seções.
+\AtBeginSection[]{
+  \begin{frame}
+    % \vfill
+    \vspace{4cm}
+    % \centering
+    % \begin{beamercolorbox}[sep = 8pt, center, shadow = true, rounded = true]{title}
+    \begin{beamercolorbox}{title}
+      \begin{columns}
+        \column{0.7\linewidth}
+        {\LARGE\textbf \insertsectionhead}
+      \end{columns}
+    \end{beamercolorbox}
+    \vfill
+  \end{frame}
+}
+
+%-----------------------------------------------------------------------
+%---- preamble-chunk.tex -----------------------------------------------
+
+% Knitr.
+
+% ATTENTION: this needs `\usepackage{xcolor}'.
+\definecolor{color_line}{HTML}{333333}
+\definecolor{color_back}{HTML}{DDDDDD}
+% \definecolor{color_back}{HTML}{FF0000}
+
+% ATTENTION: usa o fancyvrb.
+% https://ctan.math.illinois.edu/macros/latex/contrib/fancyvrb/doc/fancyvrb-doc.pdf
+% R input.
+\usepackage{tcolorbox}
+\ifcsmacro{Highlighting}{
+  % Statment if it exists. ------------------
+  \DefineVerbatimEnvironment{Highlighting}{Verbatim}{
+    % frame=lines,     % Linha superior e inferior.
+    % framerule=0.5pt, % Espessura da linha.
+    framesep=2ex,    % Distância da linha para o texto.
+    % rulecolor=\color{color_line},
+    % numbers=right,
+    fontsize=\footnotesize, % Tamanho da fonte.
+    baselinestretch=0.8,    % Espaçamento entre linhas.
+    commandchars=\\\{\}}
+  % Margens do ambiente `Shaded'.
+  % \fvset{listparameters={\setlength{\topsep}{-1em}}}
+  % \renewenvironment{Shaded}{\vspace{-1ex}}{\vspace{-2ex}}
+  \renewenvironment{Shaded}{
+    \vspace{2pt}
+    \begin{tcolorbox}[
+      boxrule=0pt,      % Espessura do contorno.
+      colframe=gray!10, % Cor do contorno.
+      colback=gray!10,  % Cor de fundo da caixa.
+      arc=1em,          % Raio para contornos arredondados.
+      sharp corners,
+      boxsep=0.5em,     % Margem interna.
+      left=3pt, right=3pt, top=3pt, bottom=3pt, % Margens internas.
+      grow to left by=0mm,
+      grow to right by=6pt,
+      ]
+    }{
+    \end{tcolorbox}
+    \vspace{-3pt}
+    }
+  }{
+  % Statment if it not exists. --------------
+}
+
+% R output e todo `verbatim'.
+\makeatletter
+\def\verbatim@font{\linespread{0.8}\ttfamily\footnotesize}
+%\makeatother
+
+% Cor de fundo e margens do `verbatim'.
+\let\oldv\verbatim
+\let\oldendv\endverbatim
+
+\def\verbatim{%
+  \par\setbox0\vbox\bgroup % Abre grupo.
+  %\vspace{-5px}            % Reduz margem superior.
+  \oldv                    % Chama abertura do verbatim.
+}
+\def\endverbatim{%
+  \oldendv                 % Chama encerramento do verbatim.
+  %\vspace{0cm}           % Controla margem inferior.
+  \egroup%\fboxsep5px      % Fecha grupo.
+  \noindent{{\usebox0}}\par
+}
+
+%-----------------------------------------------------------------------
+%---- preamble-commands.tex --------------------------------------------
+
+% Para fazer texto em duas colunas.
+\newcommand{\mytwocolumns}[4]{
+  % #1: Line width fraction for the left column , e.g. 0.5.
+  % #2: Line width fraction for the right column.
+  % #3: Content for the left column.
+  % #4: Content for the right column.
+  \begin{columns}[c]
+    \begin{column}{#1\linewidth} %----------- left.
+      #3
+    \end{column} %--------------------------- left.
+    \begin{column}{#2\linewidth} %----------- right.
+      #4
+    \end{column} %--------------------------- right.
+  \end{columns}
+}
+
+%-----------------------------------------------------------------------
+% Para fazer duas colunas no Rmd.
+
+% Center vertical align.
+\def\beginAHalfColumn{\begin{minipage}{0.49\textwidth}}%
+\def\beginAlmostHalfColumn{\begin{minipage}{0.45\textwidth}}%
+\def\beginAQuarterColumn{\begin{minipage}{0.23\textwidth}}%
+\def\beginThreeQuartersColumn{\begin{minipage}{0.72\textwidth}}%
+\def\beginAThirdColumn{\begin{minipage}{0.31\textwidth}}%
+\def\beginTwoThirdsColumn{\begin{minipage}{0.64\textwidth}}%
+\def\endColumns{\end{minipage}}%
+
+% Top vertical align.
+\def\beginAHalfColumnT{\begin{minipage}[t]{0.49\textwidth}}%
+\def\beginAlmostHalfColumnT{\begin{minipage}[t]{0.45\textwidth}}%
+\def\beginAQuarterColumnT{\begin{minipage}[t]{0.23\textwidth}}%
+\def\beginThreeQuartersColumnT{\begin{minipage}[t]{0.72\textwidth}}%
+\def\beginAThirdColumnT{\begin{minipage}[t]{0.31\textwidth}}%
+\def\beginTwoThirdsColumnT{\begin{minipage}[t]{0.64\textwidth}}%
+
+%---------------------------------------------------------------------
+% Ambientes para frases como e sem imagem.
+
+\newcommand{\myquote}[3]{
+  % #1: caminho para a imagem.
+  % #2: a frase/quotation.
+  % #3: o autor.
+  \begin{center}
+    \begin{minipage}[c]{0.19\linewidth}
+      \begin{center}
+        \includegraphics[height=2.5cm]{#1}
+      \end{center}
+    \end{minipage}
+    \begin{minipage}[c]{0.7\linewidth}
+      \begin{flushright}
+        \textit{#2}
+        \vspace{1ex}
+
+        -- #3
+      \end{flushright}
+    \end{minipage}
+  \end{center}
+}
+
+\newcommand{\myphrase}[2]{
+  % #1: a frase/quotation.
+  % #2: o autor.
+  \begin{center}
+    \begin{minipage}[c]{0.19\linewidth}
+    \end{minipage}
+    \begin{minipage}[c]{0.7\linewidth}
+      \begin{flushright}
+        \textit{#1}
+        \vspace{1ex}
+
+        -- #2
+      \end{flushright}
+    \end{minipage}
+  \end{center}
+}
+
+%-----------------------------------------------------------------------
+% Comandos para texto em destaque.
+
+% \newcommand{\hi}[1]{%
+%   \textcolor{ubuntu_orange}{#1}\xspace
+% }
+
+\usepackage{xspace}
+
+% URLs com letra miuda.
+\newcommand{\myurl}[1]{%
+  {\tiny \url{#1}}\xspace
+}
+
+% Botões.
+\newcommand{\btn}[1]{%
+  \beamergotobutton{#1}\xspace
+}
+
+% Texto grande centralizado.
+\newcommand{\centertitle}[1]{%
+  \begin{center}
+    {\LARGE \bfseries \hi{#1}}
+  \end{center}
+}
+
+%-----------------------------------------------------------------------
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdfauthor={Prof.~Me. Lineu Alberto Cavazani de Freitas},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{\textbf{Introdução}}
+\subtitle{R, história, pacotes, RStudio e primeiro contato}
+\author{Prof.~Me. Lineu Alberto Cavazani de Freitas}
+\date{}
+\institute{Métodos Estatísticos em Pesquisa Científica\\
+Apoio computacional em linguagem R\\
+\strut \\
+Departamento de Estatística\\
+Laboratório de Estatística e Geoinformação}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Estatística e o desenvolvimento computacional}
+\protect\hypertarget{estatuxedstica-e-o-desenvolvimento-computacional}{}
+\beginAHalfColumn
+
+\begin{itemize}
+\item
+  A popularização da Estatística se dá graças ao
+  \textbf{desenvolvimento computacional}.
+\item
+  Os computadores pessoais tornaram os métodos estatísticos mais
+  acessíveis ao público geral por meio de \textbf{softwares} que
+  implementam as metodologias.
+\item
+  Devido ao avanço computacional, houve um aumento considerável na
+  capacidade de produzir e armazenar dados provenientes das mais
+  diversas fontes.
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{./img/desenvolvimento-computacional} 
+
+}
+
+\caption{Extraído de \href{https://cdn.pixabay.com/photo/2020/04/04/04/23/graph-5000784_1280.png}{pixabay.com.}}\label{fig:unnamed-chunk-2}
+\end{figure}
+
+\endColumns
+\end{frame}
+
+\begin{frame}{Estatística e o desenvolvimento computacional}
+\protect\hypertarget{estatuxedstica-e-o-desenvolvimento-computacional-1}{}
+\beginAHalfColumn
+
+\begin{itemize}
+\item
+  Graças ao avanço computacional podemos lidar com a manipulação de
+  \textbf{grandes conjuntos de dados}.
+\item
+  Este grande volume de dados também força o
+  \textbf{desenvolvimento dos métodos estatísticos} e softwares para
+  análise de dados.
+\item
+  A capacidade computacional atual também desperta o interesse por
+  \textbf{métodos estatísticos computacionalmente intensivos}.
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{./img/ti} 
+
+}
+
+\caption{Extraído de \href{https://cdn.pixabay.com/photo/2015/04/14/23/17/it-business-722950_1280.png}{pixabay.com.}}\label{fig:unnamed-chunk-3}
+\end{figure}
+
+\endColumns
+\end{frame}
+
+\begin{frame}{Ferramentas para análises estatísticas}
+\protect\hypertarget{ferramentas-para-anuxe1lises-estatuxedsticas}{}
+Existem diversas ferramentas disponíveis:
+
+\beginAHalfColumn
+
+\begin{itemize}
+\item
+  R;
+\item
+  Python;
+\item
+  SAS;
+\item
+  Spss;
+\item
+  Biostat;
+\item
+  Minitab;
+\item
+  Tableau;
+\item
+  Stata;
+\item
+  E diversas outras.
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{./img/programacao} 
+
+}
+
+\caption{Extraído de \href{https://cdn.pixabay.com/photo/2018/06/08/00/48/developer-3461405_960_720.png}{pixabay.com.}}\label{fig:unnamed-chunk-4}
+\end{figure}
+
+\endColumns
+\end{frame}
+
+\begin{frame}{Ferramentas para análises estatísticas}
+\protect\hypertarget{ferramentas-para-anuxe1lises-estatuxedsticas-1}{}
+Existem diversas ferramentas disponíveis:
+
+\beginAHalfColumn
+
+\begin{itemize}
+\item
+  \textbf{R};
+\item
+  Python;
+\item
+  SAS;
+\item
+  Spss;
+\item
+  Biostat;
+\item
+  Minitab;
+\item
+  Tableau;
+\item
+  Stata;
+\item
+  E diversas outras.
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{./img/rlogo} 
+
+}
+
+\caption{Logo do R.}\label{fig:unnamed-chunk-5}
+\end{figure}
+
+\endColumns
+\end{frame}
+
+\begin{frame}{R}
+\protect\hypertarget{r}{}
+\begin{itemize}
+\item
+  R é uma linguagem e ambiente para \textbf{computação estatística} e
+  \textbf{gráficos}.
+\item
+  É \textbf{livre} e de \textbf{código aberto}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Livre (free): usuários tem liberdade de:
+
+    \begin{enumerate}
+    \tightlist
+    \item
+      executar como desejar e para qualquer propósito.
+    \item
+      estudar o funcionamento e adapta-lo à necessidades específicas.
+    \item
+      distribuir cópias de versões originais e modificadas.
+    \end{enumerate}
+  \item
+    Código aberto (open source): o acesso ao código fonte é gratuito.
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{R}
+\protect\hypertarget{r-1}{}
+\begin{itemize}
+\tightlist
+\item
+  Muito popular no meio \textbf{acadêmico} e tem uso cada vez maior no
+  meio \textbf{corporativo}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    É acessível e gratuito.
+  \item
+    Tem diversas técnicas e aplicações possíveis.
+  \end{itemize}
+\item
+  Tem potencial uso em todas as etapas do processo de análise de dados.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Obtenção, importação, manipulação e tratamento.
+  \item
+    Análise exploratória.
+  \item
+    Ajuste de modelos estatísticos, modelos de aprendizado de máquina,
+    dentre outros.
+  \item
+    Elaboração de relatórios dinâmicos e reproduzíveis.
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Antes do R}
+\protect\hypertarget{antes-do-r}{}
+\begin{itemize}
+\item
+  O R sucedeu a lingugem S, de \textbf{John Chambers}, Rick Becker,
+  Trevor Hastie, Allan Wilks e outros.
+\item
+  A linguagem S foi iniciada em 1976 e disponibilizada publicamente no
+  início dos anos 80 já como um ambiente de análise estatística.
+\item
+  Uma das principais limitações da linguagem S era que ela só estava
+  disponível em um \textbf{pacote comercial}: o S-PLUS. O que motivou a
+  criação do R.
+\item
+  Quando o R foi desenvolvido a sintaxe era muito semelhante ao S,
+  pensando na migração dos usuários de uma linguagem para outra.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{História do R}
+\protect\hypertarget{histuxf3ria-do-r}{}
+\beginAHalfColumn
+
+\begin{itemize}
+\item
+  Em \textbf{1991} o R foi criado por Ross Ihaka e Robert Gentleman
+  (``\textbf{R \& R}'') no Departamento de Estatística da Universidade
+  de Auckland.
+\item
+  Em \textbf{1993} o R foi \textbf{anunciado publicamente} pela primeira
+  vez.
+\item
+  Em \textbf{1995} o R passou a usar a
+  \textbf{GNU General Public License}, o que tornou o R um software
+  livre e de código aberto.
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{./img/r&r} 
+
+}
+
+\caption{Robert Gentleman e Ross Ihaka.}\label{fig:unnamed-chunk-6}
+\end{figure}
+
+\endColumns
+\end{frame}
+
+\begin{frame}{História do R}
+\protect\hypertarget{histuxf3ria-do-r-1}{}
+\beginAHalfColumn
+
+\begin{itemize}
+\item
+  Em \textbf{1996} foi publicado o \textbf{artigo} em que Ross e Robert
+  descrevem sua proposta:
+  ``\emph{R: A language for data analysis and graphics.}'' no Journal of
+  Computational and Graphical Statistics.
+\item
+  Ainda em \textbf{1996} foram criadas as listas de discussão
+  \textbf{R-help} e \textbf{R-devel}.
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{./img/r-paper} 
+
+}
+
+\caption{Artigo original do R.}\label{fig:unnamed-chunk-7}
+\end{figure}
+
+\endColumns
+\end{frame}
+
+\begin{frame}{História do R}
+\protect\hypertarget{histuxf3ria-do-r-2}{}
+\begin{itemize}
+\item
+  Em \textbf{1997} foi formado o \textbf{R Core Team}: um grupo de
+  aproximadamente 20 desenvolvedores que mantêm, gerenciam, controlam o
+  código fonte e orientam a evolução da linguagem.
+\item
+  Os membros do R Core Team fundaram a \textbf{R Foundation}: uma
+  organização sem fins lucrativos que trabalha no interesse público para
+  dar suporte ao R.
+\item
+  Os direitos autorais do código-fonte primário do R pertencem à R
+  Foundation e são publicados sob a GNU General Public License versão
+  2.0.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{História do R}
+\protect\hypertarget{histuxf3ria-do-r-3}{}
+\beginAHalfColumn
+
+\begin{itemize}
+\item
+  Em \textbf{2000} o R 1.0.0 foi lançado.
+\item
+  O R base está disponível para instalação no
+  \textbf{Comprehensive R Archive Network}, também conhecido como
+  \textbf{CRAN}.
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{./img/r110} 
+
+}
+
+\caption{R 1.0.0.}\label{fig:unnamed-chunk-8}
+\end{figure}
+
+\endColumns
+\end{frame}
+
+\begin{frame}{O que é o R}
+\protect\hypertarget{o-que-uxe9-o-r}{}
+\begin{itemize}
+\item
+  O R é uma \textbf{linguagem de programação}.
+\item
+  Você faz a análise de dados escrevendo \textbf{funções e scripts}, não
+  apontando, clicando e arrastando caixas.
+\item
+  Para quem nunca programou, parece assustador. Mas o R é fácil de
+  aprender e guiado a análise de dados.
+\item
+  É possível instalar e usar o R nos principais sistemas operacionais.
+\item
+  Assim como vários outros softwares livres e de código aberto, o R tem
+  lançamentos frequentes de \textbf{versões}.
+\item
+  A comunidade R é altamente ativa com usuários no mundo todo que
+  contribuem, desenvolvem pacotes e ajudam uns aos outros por meio de
+  materiais online como listas de discussão e tutoriais.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{R e os pacotes}
+\protect\hypertarget{r-e-os-pacotes}{}
+\beginAHalfColumn
+
+\begin{itemize}
+\item
+  \textbf{Pacotes R} são coleções de funções R, dados e código
+  compilado.
+\item
+  O R já vem com um conjunto de pacotes por padrão e outros podem ser
+  adicionados para estender os recursos.
+\item
+  Os pacotes hoje disponíveis são o resultado de anos de colaboração de
+  pessoas de todo o mundo.
+\item
+  Uma das funções do CRAN é hospedar diversos pacotes complementares.
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{./img/pacote} 
+
+}
+
+\caption{Extraído de \href{https://cdn.pixabay.com/photo/2014/12/21/23/35/parcel-575623_960_720.png}{pixabay.com.}}\label{fig:unnamed-chunk-9}
+\end{figure}
+
+\endColumns
+\end{frame}
+
+\begin{frame}[fragile]{R-base}
+\protect\hypertarget{r-base}{}
+\begin{itemize}
+\item
+  O R ``base'' contém o pacote básico necessário para executar o R e as
+  funções mais fundamentais.
+\item
+  As funções já vem disponíveis, prontas para chamada e uso.
+\item
+  É composto por \textbf{15} pacotes:
+\end{itemize}
+
+\beginAHalfColumn
+
+\begin{enumerate}
+\tightlist
+\item
+  \texttt{base}
+\item
+  \texttt{compiler}
+\item
+  \texttt{datasets}
+\item
+  \texttt{grDevices}
+\item
+  \texttt{graphics}
+\item
+  \texttt{grid}
+\item
+  \texttt{methods}
+\item
+  \texttt{parallel}
+\end{enumerate}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{enumerate}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  \texttt{splines}
+\item
+  \texttt{stats}
+\item
+  \texttt{stats4}
+\item
+  \texttt{tcltk}
+\item
+  \texttt{tools}
+\item
+  \texttt{translations}
+\item
+  \texttt{utils}.
+\end{enumerate}
+
+\endColumns
+\end{frame}
+
+\begin{frame}[fragile]{R-recommended}
+\protect\hypertarget{r-recommended}{}
+\begin{itemize}
+\item
+  Um segundo grupo de pacotes que já vem com a instalação do R são os
+  pacotes ``recomendados''.
+\item
+  Apesar de já instaladas, estas bibliotecas precisam ser chamadas para
+  que seja possível usar as funções.
+\item
+  É composto por outros \textbf{15} pacotes.
+\end{itemize}
+
+\beginAHalfColumn
+
+\begin{enumerate}
+\tightlist
+\item
+  \texttt{KernSmooth}
+\item
+  \texttt{MASS}
+\item
+  \texttt{Matrix}
+\item
+  \texttt{boot}
+\item
+  \texttt{class}
+\item
+  \texttt{cluster}
+\item
+  \texttt{codetools}
+\item
+  \texttt{foreign}
+\end{enumerate}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{enumerate}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  \texttt{lattice}
+\item
+  \texttt{mgcv}
+\item
+  \texttt{nlme}
+\item
+  \texttt{nnet}
+\item
+  \texttt{rpart}
+\item
+  \texttt{spatial}
+\item
+  \texttt{survival}.
+\end{enumerate}
+
+\endColumns
+\end{frame}
+
+\begin{frame}{Outros pacotes}
+\protect\hypertarget{outros-pacotes}{}
+\beginAHalfColumn
+
+\begin{itemize}
+\item
+  Você pode facilmente obter e instalar pacotes além dos 30 que já vem
+  com a instalação tradicional do R.
+\item
+  A principal fonte de pacotes é o próprio CRAN, que hoje conta com
+  \textbf{mais de 19000 pacotes}.
+\item
+  Fontes secundárias envolvem páginas web e repositórios como github,
+  onde desenvolvedores mantém pacotes em desenvolvimento.
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{./img/list-packages} 
+
+}
+
+\caption{Lista de pacotes disponíveis por nome no CRAN.}\label{fig:unnamed-chunk-10}
+\end{figure}
+
+\endColumns
+\end{frame}
+
+\begin{frame}{Limitações}
+\protect\hypertarget{limitauxe7uxf5es}{}
+\begin{itemize}
+\item
+  O R é essencialmente baseado em tecnologia antiga (sistema S da Bell
+  Labs).
+\item
+  Por ser baseado em tecnologia antiga o R sofre com suporte para
+  algumas ferramentas modernas como gráficos dinâmicos.
+\item
+  O R demanda memória física, os objetos geralmente são armazenados em
+  memória. É algo que vem sendo melhorado aos poucos.
+\item
+  O R depende dos seus usuários. Os novos recursos dependem do interesse
+  da comunidade. A partir do momento em que o interesse acabar, o R
+  ficará estagnado.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Em resumo}
+\protect\hypertarget{em-resumo}{}
+O R fornece
+
+\begin{itemize}
+\tightlist
+\item
+  Diversos recursos de Estatística.
+\item
+  Diversos recursos gráficos.
+\item
+  Uma vasta coleção de pacotes oficiais e não oficiais.
+\item
+  Uma linguagem de programação bem desenvolvida, simples e eficaz.
+\item
+  Possibilidade de instalação e uso em uma ampla variedade de
+  plataformas UNIX e sistemas similares (incluindo FreeBSD e Linux),
+  Windows e MacOS.
+\item
+  Possibilidade de uso de códigos C, C++ e Fortran para tarefas
+  computacionalmente intesivas.
+\item
+  Documentação padronizada.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{IDEs e Editores}
+\protect\hypertarget{ides-e-editores}{}
+\beginAHalfColumn
+
+\begin{itemize}
+\item
+  Existem softwares adicionais úteis para ajudar a programar de forma
+  mais rápida e eficiente.
+\item
+  As IDE's (\emph{Integrated Development Environment}) são softwares que
+  oferecem algumas facilidades para se programar em determinada
+  linguagem.
+\item
+  Já os editores tendem a ser úteis para múltiplas linguagens e fornecem
+  mais alternativas de customização.
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\begin{itemize}
+\tightlist
+\item
+  Para trabalhar em R, dentre IDEs e editores, o RStudio IDE é a opção
+  mais famosa.
+\end{itemize}
+
+\vspace{1cm}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{./img/rstudiologo} 
+
+}
+
+\caption{Logo do RStudio.}\label{fig:unnamed-chunk-11}
+\end{figure}
+
+\endColumns
+\end{frame}
+
+\begin{frame}{Links}
+\protect\hypertarget{links}{}
+\beginAHalfColumn
+
+\begin{itemize}
+\item
+  \href{https://cran.r-project.org/}{\color{blue}{The Comprehensive R Archive Network}}.
+\item
+  \href{https://posit.co/download/rstudio-desktop/}{\color{blue}{RStudio Desktop}}.
+\item
+  \href{https://posit.cloud/plans/free}{\color{blue}{Posit Cloud}}.
+\end{itemize}
+
+\endColumns
+\beginAHalfColumn
+
+\endColumns
+\end{frame}
+
+\begin{frame}{Materiais para aprender R}
+\protect\hypertarget{materiais-para-aprender-r}{}
+\begin{itemize}
+\item
+  Mayer, FP; Bonat, WH; Zeviani, WM; Krainski, EK; Ribeiro Jr., PJ.
+  \href{http://cursos.leg.ufpr.br/ecr/}{\color{blue}{Estatística Computacional com R}}.
+  DEST/UFPR, 2018.
+\item
+  Ribeiro Jr., PJ.
+  \href{http://www.leg.ufpr.br/~paulojus/embrapa/Rembrapa/}{\color{blue}{Introdução ao Ambiente Estatístico R}}.
+  2011.
+\item
+  Horton, NJ; Pruim, R; Kaplan, DT.
+  \href{http://cran-r.c3sl.ufpr.br/doc/contrib/Horton+Pruim+Kaplan_MOSAIC-StudentGuide.pdf}{\color{blue}{A Student's Guide to R}}.
+  2015.
+\item
+  Maindonald, JH.
+  \href{http://cran-r.c3sl.ufpr.br/doc/contrib/usingR.pdf}{\color{blue}{Using R for Data Analysis and Graphics}}.
+  2008.
+\item
+  Paradis, E.
+  \href{http://cran-r.c3sl.ufpr.br/doc/contrib/Paradis-rdebuts_en.pdf}{\color{blue}{R for Beginners}}.
+  2005.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Referências}
+\protect\hypertarget{referuxeancias}{}
+PENG, Roger D.
+\href{https://bookdown.org/rdpeng/rprogdatascience/}{\color{blue}{R programming for data science}}.
+Victoria, BC, Canada: Leanpub, 2016.
+
+IHAKA, Ross.
+\href{https://www.stat.auckland.ac.nz/~ihaka/downloads/Interface98.pdf}{\color{blue}{R: Past and future history}}.
+Computing Science and Statistics, v. 392396, 1998.
+
+Microsoft R Application Network.
+\href{https://mran.microsoft.com/documents/what-is-r}{\color{blue}{What is R?}}
+
+The R Project for Statistical Computing.
+\href{https://www.r-project.org/about.html}{\color{blue}{What is R?}}
+\end{frame}
+
+\end{document}

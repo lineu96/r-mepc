@@ -1,0 +1,456 @@
+origem,atividade_fisica,altura,peso,irmaos
+Interior do Paraná,Não,165,44,0
+Interior do Paraná,Sim,148,45,2
+Outro País,Não,150,45,2
+Interior do Paraná,Sim,157,45,1
+Interior do Paraná,Sim,157,45,1
+Interior do Paraná,Não,168,46,1
+Interior do Paraná,Sim,157,47,1
+Outro Estado,Não,146,48,0
+Outro Estado,Não,153,48,3
+Outro Estado,Não,154,48,3
+Outro Estado,Não,154,48,1
+Outro Estado,Sim,154,48,1
+Outro Estado,Não,154,48,1
+Região metropolitana,Sim,155,48,0
+Outro Estado,Sim,149,49,7
+Interior do Paraná,Sim,156,49,1
+Curitiba,Sim,166,49,0
+Interior do Paraná,Sim,153,50,3
+Curitiba,Sim,157,50,1
+Outro Estado,Sim,160,50,2
+Outro Estado,Sim,160,50,2
+Outro País,Não,165,50,2
+Região metropolitana,Sim,165,50,4
+Outro Estado,Sim,167,50,1
+Outro Estado,Sim,167,50,1
+Outro Estado,Sim,171,50,3
+Interior do Paraná,Não,175,50,1
+Interior do Paraná,Sim,159,51,3
+Interior do Paraná,Sim,161,51,2
+Interior do Paraná,Sim,162,51,2
+Outro País,Não,170,51,7
+Interior do Paraná,Não,152,52,2
+Interior do Paraná,Sim,153,52,1
+Curitiba,Sim,157,52,2
+Curitiba,Sim,163,52,2
+Interior do Paraná,Não,167,52,1
+Interior do Paraná,Sim,158,53,2
+Outro Estado,Sim,160,53,1
+Outro Estado,Sim,160,53,1
+Curitiba,Sim,160,53,1
+Outro Estado,Sim,161,53,4
+Interior do Paraná,Não,162,53,1
+Curitiba,Sim,162,53,2
+Curitiba,Não,163,53,3
+Interior do Paraná,Sim,158,54,1
+Outro Estado,Sim,158,54,1
+Curitiba,Sim,160,54,2
+Curitiba,Sim,160,54,2
+Outro Estado,Sim,161,54,1
+Outro Estado,Não,162,54,3
+Outro País,Sim,163,54,2
+Curitiba,Não,163,54,2
+Curitiba,Não,163,54,2
+Outro Estado,Sim,168,54,1
+Curitiba,Sim,157,55,0
+Interior do Paraná,Não,159,55,0
+Interior do Paraná,Não,164,55,2
+Interior do Paraná,Sim,164,55,2
+Interior do Paraná,Não,164,55,2
+Curitiba,Não,166,55,1
+Interior do Paraná,Sim,156,56,1
+Outro Estado,Sim,156,56,1
+Outro Estado,Sim,157,56,13
+Outro Estado,Sim,157,56,13
+Outro Estado,Sim,157,56,13
+Outro Estado,Sim,160,56,1
+Interior do Paraná,Sim,164,56,2
+Curitiba,Sim,165,56,2
+Interior do Paraná,Não,165,56,4
+Outro Estado,Sim,170,56,4
+Interior do Paraná,Não,170,56,1
+Curitiba,Sim,172,56,2
+Interior do Paraná,Sim,156,57,1
+Interior do Paraná,Sim,156,57,1
+Curitiba,Sim,157,57,1
+Curitiba,Sim,161,57,1
+Outro Estado,Não,162,57,1
+Outro Estado,Sim,163,57,0
+Outro Estado,Sim,163,57,0
+Outro Estado,Não,165,57,2
+Outro Estado,Sim,165,57,3
+Outro Estado,Sim,172,57,0
+Interior do Paraná,Sim,154,58,1
+Interior do Paraná,Não,154,58,0
+Outro Estado,Não,158,58,1
+Outro País,Sim,159,58,3
+Outro Estado,Sim,162,58,3
+Curitiba,Sim,162,58,1
+Interior do Paraná,Sim,163,58,5
+Curitiba,Não,164,58,1
+Curitiba,Sim,164,58,1
+Interior do Paraná,Não,169,58,1
+Outro País,Não,169,58,8
+Outro País,Não,169,58,8
+Interior do Paraná,Sim,172,58,0
+Curitiba,Não,163,59,1
+Curitiba,Sim,164,59,2
+Curitiba,Não,170,59,2
+Curitiba,Sim,158,60,2
+Outro Estado,Sim,160,60,1
+Interior do Paraná,Sim,161,60,1
+Interior do Paraná,Sim,163,60,1
+Interior do Paraná,Não,164,60,1
+Interior do Paraná,Não,164,60,1
+Interior do Paraná,Não,164,60,1
+Curitiba,Sim,167,60,1
+Interior do Paraná,Sim,169,60,1
+Outro Estado,Sim,170,60,1
+Interior do Paraná,Não,158,61,3
+Outro Estado,Sim,158,61,2
+Curitiba,Sim,162,61,0
+Interior do Paraná,Sim,162,61,2
+Interior do Paraná,Não,164,61,1
+Outro Estado,Não,158,62,2
+Curitiba,Não,160,62,2
+Outro Estado,Não,160,62,1
+Outro País,Sim,161,62,5
+Interior do Paraná,Sim,162,62,2
+Interior do Paraná,Não,163,62,4
+Interior do Paraná,Sim,164,62,4
+Interior do Paraná,Sim,164,62,4
+Interior do Paraná,Sim,165,62,1
+Curitiba,Não,170,62,2
+Interior do Paraná,Sim,170,62,2
+Interior do Paraná,Sim,172,62,1
+Curitiba,Sim,173,62,3
+Outro Estado,Não,173,62,1
+Interior do Paraná,Sim,175,62,1
+Interior do Paraná,Sim,156,63,3
+Interior do Paraná,Não,160,63,1
+Outro Estado,Sim,164,63,2
+Interior do Paraná,Sim,165,63,1
+Interior do Paraná,Sim,165,63,1
+Curitiba,Sim,166,63,1
+Outro Estado,Sim,169,63,0
+Outro Estado,Sim,169,63,1
+Outro Estado,Sim,169,63,1
+Outro Estado,Não,170,63,1
+Interior do Paraná,Sim,157,64,2
+Interior do Paraná,Sim,158,64,3
+Outro Estado,Sim,162,64,1
+Outro Estado,Sim,162,64,2
+Curitiba,Sim,162,64,1
+Curitiba,Sim,164,64,2
+Outro Estado,Sim,164,64,1
+Outro País,Sim,165,64,2
+Outro Estado,Sim,167,64,1
+Interior do Paraná,Não,168,64,6
+Outro Estado,Sim,170,64,3
+Outro País,Sim,170,64,2
+Outro Estado,Sim,172,64,1
+Curitiba,Sim,177,64,1
+Outro País,Não,184,64,12
+Interior do Paraná,Não,154,65,0
+Interior do Paraná,Não,154,65,0
+Outro Estado,Não,160,65,1
+Interior do Paraná,Não,163,65,28
+Curitiba,Sim,164,65,1
+Interior do Paraná,Sim,164,65,1
+Interior do Paraná,Sim,165,65,1
+Curitiba,Não,165,65,1
+Interior do Paraná,Sim,166,65,1
+Outro Estado,Sim,168,65,2
+Interior do Paraná,Não,169,65,1
+Interior do Paraná,Sim,170,65,2
+Curitiba,Sim,170,65,1
+Curitiba,Sim,170,65,1
+Curitiba,Sim,172,65,1
+Outro País,Sim,172,65,3
+Outro Estado,Não,174,65,1
+Outro Estado,Sim,176,65,1
+Outro Estado,Sim,179,65,3
+Interior do Paraná,Sim,159,66,2
+Interior do Paraná,Sim,164,66,0
+Curitiba,Sim,165,66,0
+Região metropolitana,Sim,167,66,0
+Curitiba,Sim,159,67,1
+Interior do Paraná,Sim,160,67,1
+Interior do Paraná,Não,167,67,1
+Interior do Paraná,Sim,167,67,1
+Curitiba,Sim,174,67,3
+Outro Estado,Sim,179,67,2
+Outro Estado,Sim,179,67,2
+Outro Estado,Sim,180,67,1
+Outro Estado,Não,180,67,1
+Interior do Paraná,Sim,157,68,2
+Interior do Paraná,Não,158,68,6
+Região metropolitana,Sim,162,68,1
+Interior do Paraná,Sim,164,68,1
+Outro Estado,Não,164,68,2
+Interior do Paraná,Sim,164,68,1
+Outro Estado,Sim,165,68,4
+Outro Estado,Sim,165,68,1
+Curitiba,Sim,167,68,2
+Interior do Paraná,Não,169,68,2
+Curitiba,Sim,171,68,2
+Outro Estado,Sim,173,68,2
+Outro Estado,Sim,152,69,2
+Outro Estado,Sim,164,69,1
+Curitiba,Sim,164,69,1
+Outro Estado,Sim,168,69,1
+Outro Estado,Sim,169,69,1
+Outro Estado,Sim,170,69,2
+Outro Estado,Sim,170,69,2
+Outro País,Sim,175,69,7
+Outro Estado,Sim,191,69,3
+Curitiba,Não,157,70,1
+Interior do Paraná,Sim,157,70,2
+Outro Estado,Não,158,70,1
+Região metropolitana,Não,160,70,1
+Outro Estado,Não,160,70,1
+Curitiba,Sim,164,70,1
+Interior do Paraná,Sim,164,70,1
+Curitiba,Não,169,70,2
+Interior do Paraná,Sim,170,70,1
+Outro Estado,Sim,170,70,3
+Outro Estado,Sim,170,70,4
+Outro Estado,Não,170,70,0
+Outro Estado,Não,170,70,0
+Curitiba,Não,171,70,0
+Curitiba,Sim,174,70,1
+Curitiba,Não,180,70,0
+Outro Estado,Sim,180,70,1
+Outro Estado,Sim,180,70,1
+Interior do Paraná,Não,180,70,2
+Outro País,Não,180,70,1
+Curitiba,Sim,182,70,2
+Outro Estado,Sim,160,71,0
+Outro Estado,Sim,165,71,0
+Outro Estado,Sim,171,71,2
+Curitiba,Sim,178,71,3
+Interior do Paraná,Não,158,72,1
+Outro Estado,Sim,165,72,2
+Interior do Paraná,Não,172,72,1
+Interior do Paraná,Sim,172,72,3
+Interior do Paraná,Sim,176,72,2
+Outro Estado,Sim,176,72,1
+Interior do Paraná,Sim,176,72,2
+Outro Estado,Sim,180,72,3
+Curitiba,Sim,183,72,2
+Interior do Paraná,Não,171,73,1
+Outro Estado,Sim,174,73,2
+Outro Estado,Sim,176,73,3
+Interior do Paraná,Não,180,73,1
+Interior do Paraná,Sim,183,73,1
+Curitiba,Sim,170,74,2
+Curitiba,Sim,170,74,1
+Curitiba,Sim,170,74,1
+Outro Estado,Sim,174,74,1
+Interior do Paraná,Sim,163,75,1
+Região metropolitana,Não,164,75,1
+Interior do Paraná,Sim,165,75,1
+Curitiba,Sim,166,75,0
+Interior do Paraná,Sim,167,75,3
+Outro Estado,Sim,168,75,1
+Outro Estado,Sim,168,75,1
+Interior do Paraná,Sim,169,75,1
+Interior do Paraná,Sim,169,75,2
+Outro Estado,Sim,169,75,4
+Outro Estado,Sim,170,75,1
+Região metropolitana,Sim,170,75,4
+Interior do Paraná,Não,172,75,0
+Interior do Paraná,Não,172,75,0
+Interior do Paraná,Sim,173,75,2
+Curitiba,Sim,173,75,1
+Outro País,Sim,175,75,2
+Curitiba,Sim,175,75,1
+Outro País,Sim,175,75,2
+Outro Estado,Sim,176,75,9
+Curitiba,Sim,179,75,1
+Outro Estado,Sim,180,75,1
+Outro Estado,Não,183,75,3
+Outro País,Sim,183,75,5
+Outro Estado,Sim,183,75,3
+Outro Estado,Sim,186,75,1
+Curitiba,Sim,153,76,4
+Outro Estado,Sim,157,76,1
+Outro Estado,Sim,157,76,1
+Outro Estado,Não,158,76,5
+Interior do Paraná,Sim,163,76,4
+Outro Estado,Não,164,76,1
+Outro Estado,Não,165,76,4
+Curitiba,Sim,168,76,3
+Outro Estado,Sim,178,76,1
+Interior do Paraná,Sim,178,76,2
+Região metropolitana,Sim,163,77,2
+Região metropolitana,Sim,170,77,0
+Interior do Paraná,Sim,170,77,1
+Interior do Paraná,Sim,171,77,4
+Interior do Paraná,Sim,171,77,4
+Outro Estado,Sim,176,77,2
+Curitiba,Sim,183,77,2
+Interior do Paraná,Sim,157,78,0
+Curitiba,Sim,159,78,3
+Interior do Paraná,Sim,165,78,2
+Outro Estado,Sim,170,78,1
+Outro Estado,Sim,171,78,1
+Outro Estado,Não,173,78,3
+Interior do Paraná,Sim,174,78,1
+Outro Estado,Sim,189,78,7
+Interior do Paraná,Não,154,79,2
+Outro Estado,Não,162,79,2
+Interior do Paraná,Não,164,79,1
+Outro Estado,Sim,164,79,4
+Interior do Paraná,Sim,169,79,1
+Outro Estado,Sim,173,79,3
+Outro País,Não,176,79,4
+Interior do Paraná,Sim,179,79,1
+Curitiba,Sim,182,79,2
+Interior do Paraná,Sim,158,80,2
+Interior do Paraná,Sim,158,80,2
+Curitiba,Sim,159,80,4
+Interior do Paraná,Sim,160,80,1
+Interior do Paraná,Não,163,80,1
+Curitiba,Sim,164,80,2
+Interior do Paraná,Não,165,80,1
+Outro Estado,Não,165,80,4
+Outro Estado,Não,165,80,1
+Interior do Paraná,Sim,170,80,4
+Interior do Paraná,Sim,172,80,0
+Curitiba,Sim,174,80,1
+Outro Estado,Não,175,80,2
+Outro Estado,Sim,175,80,1
+Outro Estado,Não,175,80,2
+Interior do Paraná,Sim,176,80,3
+Outro Estado,Sim,180,80,2
+Região metropolitana,Não,184,80,1
+Curitiba,Sim,187,80,1
+Outro Estado,Sim,172,81,24
+Outro Estado,Sim,173,81,1
+Outro Estado,Sim,180,81,1
+Outro Estado,Sim,185,81,3
+Interior do Paraná,Sim,167,82,1
+Interior do Paraná,Sim,167,82,1
+Interior do Paraná,Sim,167,82,1
+Interior do Paraná,Sim,167,82,1
+Interior do Paraná,Sim,167,82,1
+Outro País,Sim,169,82,7
+Outro País,Sim,169,82,7
+Outro Estado,Não,172,82,0
+Interior do Paraná,Sim,173,82,2
+Interior do Paraná,Sim,173,82,2
+Interior do Paraná,Sim,180,82,2
+Curitiba,Sim,162,83,2
+Interior do Paraná,Não,183,83,1
+Interior do Paraná,Sim,174,84,5
+Interior do Paraná,Sim,174,84,5
+Outro Estado,Não,178,84,2
+Região metropolitana,Sim,180,84,1
+Interior do Paraná,Sim,187,84,0
+Interior do Paraná,Sim,187,84,0
+Curitiba,Sim,165,85,1
+Interior do Paraná,Sim,169,85,3
+Curitiba,Não,170,85,1
+Outro Estado,Sim,174,85,3
+Outro Estado,Sim,175,85,1
+Outro Estado,Sim,175,85,1
+Outro Estado,Sim,176,85,3
+Interior do Paraná,Sim,180,85,1
+Outro Estado,Sim,187,85,1
+Outro Estado,Sim,187,85,1
+Outro Estado,Sim,187,85,2
+Outro Estado,Sim,187,85,1
+Interior do Paraná,Sim,187,85,2
+Interior do Paraná,Não,165,86,3
+Interior do Paraná,Sim,185,86,3
+Interior do Paraná,Sim,185,86,3
+Interior do Paraná,Sim,188,86,3
+Outro Estado,Não,158,87,2
+Outro Estado,Sim,158,87,2
+Interior do Paraná,Não,186,87,0
+Curitiba,Sim,163,88,4
+Interior do Paraná,Não,168,88,0
+Outro Estado,Não,169,88,3
+Interior do Paraná,Sim,175,88,5
+Interior do Paraná,Sim,169,89,3
+Outro Estado,Sim,178,89,1
+Curitiba,Sim,182,89,1
+Interior do Paraná,Sim,186,89,3
+Outro Estado,Sim,160,90,1
+Outro Estado,Não,165,90,3
+Outro Estado,Não,171,90,1
+Interior do Paraná,Não,175,90,2
+Outro Estado,Não,180,90,2
+Outro País,Sim,151,91,3
+Interior do Paraná,Sim,168,91,1
+Outro Estado,Não,172,91,0
+Outro Estado,Não,178,91,0
+Interior do Paraná,Não,180,91,2
+Outro Estado,Não,178,92,0
+Curitiba,Sim,179,92,2
+Curitiba,Sim,180,92,1
+Interior do Paraná,Sim,185,92,1
+Interior do Paraná,Sim,185,92,1
+Curitiba,Sim,170,93,2
+Outro Estado,Sim,178,93,1
+Interior do Paraná,Não,170,94,0
+Interior do Paraná,Sim,173,94,1
+Outro Estado,Sim,175,94,5
+Outro Estado,Sim,181,94,1
+Outro Estado,Não,181,94,1
+Região metropolitana,Sim,170,95,3
+Interior do Paraná,Sim,177,95,2
+Outro Estado,Sim,180,95,2
+Outro Estado,Sim,184,95,2
+Outro Estado,Sim,184,95,0
+Curitiba,Sim,185,95,3
+Outro Estado,Sim,190,95,1
+Outro Estado,Sim,173,96,2
+Outro Estado,Sim,173,96,2
+Interior do Paraná,Sim,175,96,2
+Outro Estado,Não,181,96,2
+Curitiba,Sim,183,96,2
+Interior do Paraná,Não,168,98,1
+Curitiba,Sim,172,98,3
+Interior do Paraná,Sim,172,98,3
+Interior do Paraná,Sim,172,98,3
+Interior do Paraná,Sim,172,98,3
+Outro Estado,Não,175,98,1
+Outro Estado,Não,175,98,1
+Outro Estado,Não,176,98,1
+Interior do Paraná,Sim,189,98,2
+Curitiba,Sim,189,99,1
+Curitiba,Sim,189,99,1
+Interior do Paraná,Não,162,100,1
+Outro Estado,Não,166,100,5
+Curitiba,Não,168,100,2
+Outro Estado,Sim,170,100,3
+Interior do Paraná,Sim,180,100,0
+Outro Estado,Sim,194,100,1
+Curitiba,Sim,164,101,1
+Interior do Paraná,Sim,166,101,3
+Curitiba,Sim,190,102,1
+Outro Estado,Não,163,104,3
+Curitiba,Sim,193,104,0
+Interior do Paraná,Sim,179,105,0
+Interior do Paraná,Não,174,106,0
+Curitiba,Não,175,106,0
+Curitiba,Não,183,106,1
+Interior do Paraná,Sim,185,108,1
+Interior do Paraná,Sim,190,109,2
+Região metropolitana,Sim,160,110,2
+Interior do Paraná,Sim,180,110,0
+Curitiba,Sim,185,110,2
+Curitiba,Sim,185,110,2
+Interior do Paraná,Sim,176,113,1
+Interior do Paraná,Sim,176,113,1
+Outro Estado,Sim,177,114,1
+Outro Estado,Não,170,115,2
+Curitiba,Não,180,120,1
+Região metropolitana,Não,183,122,1
+Outro Estado,Não,186,122,1
+Outro Estado,Sim,179,125,0
+Interior do Paraná,Não,172,150,1
+Curitiba,Não,179,160,0

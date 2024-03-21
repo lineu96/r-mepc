@@ -1,0 +1,157 @@
+---
+title: \textbf{Tabulação, importação e exportação de dados}
+subtitle: Recomendações gerais na tabulação, leitura e escrita de dados usando R
+author: Prof. Me. Lineu Alberto Cavazani de Freitas
+date: ""
+institute: |
+ | Métodos Estatísticos em Pesquisa Científica
+ | Apoio computacional em linguagem R
+ |
+ | Departamento de Estatística
+ | Laboratório de Estatística e Geoinformação
+graphics: yes
+classoption: [serif, professionalfont, usenames, dvipsnames, aspectratio = 169]
+# bibliography: references.bib
+# csl: ../config/ABNT_UFPR_2011-Mendeley.csl
+output:
+  beamer_presentation:
+    fig_caption: yes
+    fig_crop: no
+    highlight: haddock
+    includes:
+      # NOTE: background, color theme and logos are defined in `preamble-rmd-settings.tex`.
+      in_header: [config/preamble-settings-rmd.tex, config/preamble-global.tex, config/preamble-chunk-rmd.tex, config/preamble-commands.tex]
+    keep_tex: yes
+# http://rmarkdown.rstudio.com/beamer_presentation_format.html
+---
+
+```{r, include = FALSE}
+source("./config/setup.R")
+```
+
+## Importação e exportação
+
+ - Usando o `R` é possível \textbf{importar} e \textbf{exportar} dados em diferente formatos.
+ 
+ - Os formatos comuns são \textbf{txt}, \textbf{csv} e \textbf{xls/xlsx}.
+
+ - É possível trabalhar com outros formatos e até mesmo bancos de dados relacionais.
+  
+ - Mas para que a leitura seja bem sucedida, uma etapa anterior merece atenção: a \textbf{tabulação dos dados}.
+
+# Tabulação
+
+## Tabulação
+
+ - Em Estatística e análise de dados de modo geral trabalhamos com \textbf{dados estruturados} em um \textbf{formato tabular}.
+ 
+    - Cada \textbf{linha} representa uma \textbf{observação}.
+    - Cada \textbf{coluna} uma \textbf{variável}.
+    - Cada \textbf{célula} o valor da variável para aquela \textbf{observação}.
+ 
+ - A ideia é simples, mas na prática... Vemos muitas inconsistências.
+
+ - Uma tabulação adequada economiza tratamentos posteriores para realizar a leitura dos dados e, consequentemente, adianta a análise.
+ 
+## Inconsistências comuns
+
+1. Níveis de variáveis qualitativas tabulados de forma inconsistente.
+
+2. Variáveis quantitativas representadas com caracteres.
+
+3. Inconsistência nas escalas.
+
+4. Inconsistência nos decimais.
+
+5. Valores ausentes tabulados de forma equivocada.
+
+6. Planilhas formatadas (células mescladas, subtabelas coloridas).
+
+7. Variáveis de interesse em múltiplas abas de uma planilha.
+
+8. Codificações que só fazem sentido para o pesquisador.
+
+9. A mesma variável tabulada em diferentes colunas (comum em estudos longitudinais).
+
+## Dicas e boas práticas
+
+ - Evite nomes de colunas longos ou caracteres especiais.
+ 
+ - Seja consistente na tabulação dos níveis de variáveis qualitativas (maiúsculas e mínusculas, espaços, abreviações).
+
+ -  Se a variável é quantitativa, não coloque texto nas células.
+
+ -  Defina qual será o representador de decimal e use-o em toda a tabulação.
+
+ - Se o valor for ausente, coloque NA na célula ou deixe-a em branco.
+
+ - Não use células mescladas se seu interesse é importar os dados.
+ 
+ - Gere uma tabela "final" com as variáveis que você tem interesse em analisar. 
+ 
+ - Evite várias planilhas ou abas com diferentes variáveis que devem ser analisadas juntas.
+
+ - Evite códigos e procedimentos que só fazem sentido pra você. Você está habituado com os dados, quem vai analisar não.
+
+# Importação
+
+## Importação
+
+ - Chamamos de \textbf{importação} ou \textbf{leitura} o procedimento de entrar com um conjunto de dados externo no R.
+ 
+ - Podemos ter dados em diferentes formatos, por exemplo:
+
+    - Arquivos simples de texto com extensão \textbf{txt}.
+
+    - Arquivos separados por "," ou ";" no formato \textbf{csv}.
+
+    - Planilhas do Excel em formato \textbf{xlsx} e \textbf{xls}.
+    
+    - Arquivos de dados do `R` como RData, rda, rds.
+    
+    - Arquivos de outros softwares como SPSS, Stata e SAS.
+ 
+    - Bancos de dados relacionais.
+ 
+## Importação 
+ 
+ - Vamos explorar os comandos para leitura dos tipos mais comuns: arquivos txt, csv e xlsx/xls.
+ 
+    - Para arquivos txt: `read.table()`.
+ 
+    - Para arquivos csv: `read.csv()` e `read.csv2()`.
+ 
+    - Para planilhas do Excel (arquivos xls e xlsx) precisamos do auxílio de bibliotecas para fazer a importação, como a `openxlsx` que possui a função `read.xlsx()`.
+
+ - Existem formas alternativas para entrar com conjuntos de dados de forma manual no R, como as funções `scan()` e `edit()`.
+
+# Exportação 
+ 
+## Exportação 
+ 
+ - Chamamos de \textbf{exportação} o procedimento de enviar um conjunto de dados para fora do R como um arquivo.
+ 
+ - Considerando os já mencionados tipos (txt, csv e xlsx), podemos usar as funções:
+    
+    - `write.table()` para exportar arquivos txt e csv.
+    
+    - `write.csv()` para arquivos csv.
+    
+    - `write.xlsx()` do pacote `openxlsx`.
+
+## O que foi visto
+
+\textbf{Tabulação de dados}
+
+  - Inconsistências comuns.
+  - Boas práticas.
+ 
+\textbf{Importação}
+
+  - Entrada de dados no R com as funções `read.table()`, `read.csv()`, `read.xlsx()`, `scan()` e `edit(data.frame())`.
+ 
+\textbf{Exportação}
+
+  - Saída de dados do R com as funções `write.table()`, `write.csv()` e `write.xlsx()`
+ 
+ 
