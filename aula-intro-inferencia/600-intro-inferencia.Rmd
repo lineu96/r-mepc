@@ -1,0 +1,607 @@
+---
+title: | 
+  | \textbf{Paradigma frequentista de Inferência Estatística}
+  | Ideias sobre distribuição amostral
+subtitle: |
+  |
+  | Métodos Estatísticos em Pesquisa Científica (MEPC)
+author: Prof. Me. Lineu Alberto Cavazani de Freitas
+date: ""
+institute: |
+ |
+ | Departamento de Estatística
+ | Laboratório de Estatística e Geoinformação
+
+graphics: yes
+classoption: [serif, professionalfont, usenames, dvipsnames, aspectratio = 169]
+# bibliography: references.bib
+# csl: ../config/ABNT_UFPR_2011-Mendeley.csl
+output:
+  beamer_presentation:
+    fig_caption: yes
+    fig_crop: no
+    highlight: haddock
+    includes:
+      # NOTE: background, color theme and logos are defined in `preamble-rmd-settings.tex`.
+      in_header: [config/preamble-settings-rmd.tex, config/preamble-global.tex, config/preamble-chunk-rmd.tex, config/preamble-commands.tex]
+    keep_tex: yes
+# http://rmarkdown.rstudio.com/beamer_presentation_format.html
+---
+
+## Introdução
+
+Já discutimos os conceitos de \textbf{população},  \textbf{amostra} e \textbf{inferência}.
+
+\vspace{0.3cm}
+
+ - \textbf{População}: conjunto de todos os elementos que compartilham alguma característica comum que temos interesse em estudar.
+
+\vspace{0.3cm}
+
+ - \textbf{Amostra}: subconjunto da população.
+
+\vspace{0.3cm}
+
+ - \textbf{Inferência}: ramo da Estatística que tem como objetivo estudar a \textbf{população} por meio de evidências fornecidas por uma \textbf{amostra}.
+
+## Introdução
+
+ - Muitas vezes estamos interessados em quantidades populacionais, contudo trabalhar com a população pode ser custoso ou até mesmo impossível.
+
+\vspace{0.3cm}
+
+ - A solução é trabalhar com um subconjunto da população, isto é, uma amostra.
+
+\vspace{0.3cm}
+
+ - O objetivo das técnicas de \textbf{amostragem} é gerar um subconjunto que seja \textbf{representativo} em relação a população para estimar quantidades de interesse (uma média, uma variância, uma proporção, etc).
+
+## Introdução
+
+ - Contudo é intuitivo notar que, caso se repita o processo de amostragem, uma amostra diferente da inicial será obtida.
+
+\vspace{0.3cm}
+
+ - Consequentemente, as medidas de interesse calculadas (média, variância, etc.) em diferentes amostras não serão iguais.
+
+\vspace{0.3cm}
+
+ - Isto quer dizer que mesmo o procedimento de amostragem estando correto sempre haverá aleatoriedade envolvida e os valores calculados com base na amostra são \textbf{candidatos} à quantidade na população.
+
+## Introdução
+
+ - Devido à natureza aleatória, todas as quantidades associadas à amostra devem receber tratamento probabilístico. 
+
+\vspace{0.3cm}
+
+ - Levando isso em conta, são objetivos da inferência estatística:
+   1. Estimar quantidades com base apenas na amostra (valor pontual).
+   2. Avaliar o quão preciso ou creditável é o valor estimado (intervalo de confiança).
+   3. Decidir sobre possíveis valores da quantidade baseado apenas na amostra (teste de hipótese).
+ 
+# Distribuição amostral
+
+## Distribuição amostral
+
+ - Estimativas são \textbf{variáveis aleatórias} (sabemos o que pode acontecer, mas não o que vai acontecer).
+
+\vspace{0.3cm}
+
+ - Variáveis aleatórias têm distribuição de probabilidade.
+
+\vspace{0.3cm}
+
+ - A \textbf{distribuição de probabilidades de estimativas} é chamada de \textbf{distribuição amostral}.
+
+\vspace{0.3cm}
+
+ - Para estudar um \textbf{parâmetro}, usamos a distribuição amostral.
+
+\vspace{0.3cm}
+
+ - No \textbf{paradigma frequentista} pensamos no que aconteceria se diversas amostras fossem tomadas e em cada amostra a quantidade de interesse fosse obtida.
+
+## Distribuição amostral
+
+ - Imagine que:
+    - Coletamos diversas amostras.
+    - Em cada amostra calculamos o estimador de interesse (uma média, por exemplo).
+    - Se obtivermos a distribuição empírica deste estimador, temos tudo que precisamos para fazer inferência.
+
+\vspace{0.3cm}
+
+ - A distribuição amostral pode ser usada para avaliar o que aconteceria se o estudo fosse replicado um grande número de vezes.
+
+\vspace{0.3cm}
+
+ - A distribuição amostral é o objeto de inferência (frequentista).
+
+   - A \textbf{estimativa pontual} é um resumo da distribuição amostral.
+
+   - Intervalos entre \textbf{quantis} representam a incerteza sobre o valor estimado.
+
+# Teorema Central do Limite
+
+## Teorema Central do Limite
+
+ - A média é uma das quantidades de maior interesse em contextos práticos.
+
+\vspace{0.3cm}
+
+ - A distribuição amostral da média é conhecida graças ao Teorema Central do Limite (TCL).
+
+\vspace{0.3cm}
+
+ - Segundo o teorema, quanto maior o tamanho da amostra, a distribuição da média amostral se comporta segundo um modelo Normal.
+
+## Teorema Central do Limite
+
+ - Suponha uma amostra aleatória de tamanho $n$ retirada de uma população com média $\mu$ e variância $\sigma^2$ finita.
+
+\vspace{0.3cm}
+
+ - Note que o modelo da variável aleatória não é especificado.
+
+\vspace{0.3cm}
+
+ - A amostra ($Y_1, Y_2, \cdots, Y_n$) consiste de $n$ variáveis aleatórias independentes e identicamente distribuidas.
+
+## Teorema Central do Limite
+
+Segundo o teorema:
+
+$$\left (\frac{\bar{Y} - \mu}{\sigma\sqrt{n}} \right) \overset{D}{\rightarrow} Z \sim N(0,1), \text{para } n \rightarrow \infty$$
+
+De forma alternativa:
+
+$$\bar{Y} \sim N(\mu; \sigma^2/n)$$
+
+O resultado pode ser generalizado para proporções:
+
+$$\hat{p} \sim N \left ( p; \frac{p(1-p)}{n} \right )$$
+
+# Ilustração computacional
+
+## Ilustração computacional
+
+ - Um questionário foi aplicado a uma turma com diversas questões sobre características dos alunos. 
+
+\vspace{0.3cm}
+
+ - Uma das questões perguntava a altura dos alunos. Consideraremos que a turma é uma população e temos interesse em fazer inferência sobre a altura média desta população.
+
+\vspace{0.3cm}
+
+ - Para isso:
+   1. Tomamos diversas amostras.
+   2. Para cada amostra calculamos a média.
+   3. Considerando o vetor de médias, construimos a distribuição amostral.
+   4. Com base na distribuição amostral empírica, fazemos inferência (estimativa pontual e intervalar).
+
+\vspace{0.3cm}
+
+ - Neste caso, sabemos a verdadeira altura média. Logo, podemos verificar se nossa inferência foi bem sucedida.
+
+## Ilustração computacional
+
+```{r, echo=FALSE, fig.align='center', out.width='70%'}
+#----------------------------------------------------------------------
+
+## População
+quest <- read.csv("respostas-2024.csv")
+populacao <- quest$Qual.a.sua.altura.
+
+#-----------------------------------------------------------------------
+
+## Definindo algumas quantidades
+tamanho_amostra <- 10
+n_amostras <- 1000
+
+#-----------------------------------------------------------------------
+
+## Coletando diferentes amostras
+amostras <- matrix(nrow = tamanho_amostra, 
+                   ncol = n_amostras)
+
+for(i in 1:n_amostras) {
+  amostras[,i] <- sample(populacao, 
+                         size = tamanho_amostra, 
+                         replace = TRUE)  
+}
+
+amostras <- as.data.frame(amostras)
+#-----------------------------------------------------------------------
+
+## Calculando a média de cada amostra
+medias <- colMeans(amostras)
+
+#-----------------------------------------------------------------------
+
+## Distribuição amostral empírica de forma gráfica
+hist(medias,
+     col = 0,
+     probability = T,
+     xlab = 'Médias', 
+     ylab = 'Densidade',
+     main = 'Distribuição amostral da média \n 1000 amostras de tamanho 10')
+
+lines(density(medias), col = 1, lwd = 3)
+
+legend(x = "topright", 
+       lwd = c(3,3,3,3), 
+       col= c(2,3,4,1), 
+       legend=c("Mediana",
+                "Média",
+                "Quantis 5% e 95%",
+                "Verdadeiro valor"))
+```
+
+## Ilustração computacional
+
+```{r, echo=FALSE, fig.align='center', out.width='70%'}
+## Distribuição amostral empírica de forma gráfica
+hist(medias,
+     col = 0,
+     probability = T,
+     xlab = 'Médias', 
+     ylab = 'Densidade',
+     main = 'Distribuição amostral da média \n 1000 amostras de tamanho 10')
+
+lines(density(medias), col = 1, lwd = 3)
+
+legend(x = "topright", 
+       lwd = c(3,3,3,3), 
+       col= c(2,3,4,1), 
+       legend=c("Mediana",
+                "Média",
+                "Quantis 5% e 95%",
+                "Verdadeiro valor"))
+
+#-----------------------------------------------------------------------
+
+## Adicionando quantidades no gráfico
+### Mediana
+abline(v = quantile(medias, 
+                    probs = 0.5),
+       col = 2, lwd = 5)
+```
+
+## Ilustração computacional
+
+```{r, echo=FALSE, fig.align='center', out.width='70%'}
+## Distribuição amostral empírica de forma gráfica
+hist(medias,
+     col = 0,
+     probability = T,
+     xlab = 'Médias', 
+     ylab = 'Densidade',
+     main = 'Distribuição amostral da média \n 1000 amostras de tamanho 10')
+
+lines(density(medias), col = 1, lwd = 3)
+
+legend(x = "topright", 
+       lwd = c(3,3,3,3), 
+       col= c(2,3,4,1), 
+       legend=c("Mediana",
+                "Média",
+                "Quantis 5% e 95%",
+                "Verdadeiro valor"))
+
+#-----------------------------------------------------------------------
+
+## Adicionando quantidades no gráfico
+### Mediana
+abline(v = quantile(medias, 
+                    probs = 0.5),
+       col = 2, lwd = 5)
+
+### Média
+abline(v = mean(medias),
+       col = 3, lwd = 5)
+
+```
+
+## Ilustração computacional
+
+```{r, echo=FALSE, fig.align='center', out.width='70%'}
+## Distribuição amostral empírica de forma gráfica
+hist(medias,
+     col = 0,
+     probability = T,
+     xlab = 'Médias', 
+     ylab = 'Densidade',
+     main = 'Distribuição amostral da média \n 1000 amostras de tamanho 10')
+
+lines(density(medias), col = 1, lwd = 3)
+
+legend(x = "topright", 
+       lwd = c(3,3,3,3), 
+       col= c(2,3,4,1), 
+       legend=c("Mediana",
+                "Média",
+                "Quantis 5% e 95%",
+                "Verdadeiro valor"))
+
+#-----------------------------------------------------------------------
+
+## Adicionando quantidades no gráfico
+### Mediana
+abline(v = quantile(medias, 
+                    probs = 0.5),
+       col = 2, lwd = 5)
+
+### Média
+abline(v = mean(medias),
+       col = 3, lwd = 5)
+
+### Quantis
+abline(v = quantile(medias, 
+                    probs = c(0.05, 0.95)),
+       col = 4, lwd = 5)
+
+
+```
+
+## Ilustração computacional
+
+```{r, echo=FALSE, fig.align='center', out.width='70%'}
+## Distribuição amostral empírica de forma gráfica
+hist(medias,
+     col = 0,
+     probability = T,
+     xlab = 'Médias', 
+     ylab = 'Densidade',
+     main = 'Distribuição amostral da média \n 1000 amostras de tamanho 10')
+
+lines(density(medias), col = 1, lwd = 3)
+
+legend(x = "topright", 
+       lwd = c(3,3,3,3), 
+       col= c(2,3,4,1), 
+       legend=c("Mediana",
+                "Média",
+                "Quantis 5% e 95%",
+                "Verdadeiro valor"))
+
+#-----------------------------------------------------------------------
+
+## Adicionando quantidades no gráfico
+### Mediana
+abline(v = quantile(medias, 
+                    probs = 0.5),
+       col = 2, lwd = 5)
+
+### Média
+abline(v = mean(medias),
+       col = 3, lwd = 5)
+
+### Quantis
+abline(v = quantile(medias, 
+                    probs = c(0.05, 0.95)),
+       col = 4, lwd = 5)
+
+### Valor real do parâmetro
+abline(v = mean(populacao), col = 1, lwd = 5)
+
+```
+
+## Ilustração computacional
+
+ - Os resultados mostram que não precisamos olhar a população para ter uma estimativa satisfatóriamente próxima do verdadeiro valor do parâmetro de interesse.
+
+\vspace{0.3cm}
+
+ - Contudo esta estratégia é inviável na prática, pois necessita de várias amostras.
+
+\vspace{0.3cm}
+
+ - Verificamos que a distribuição amostral é simétrica.
+
+\vspace{0.3cm}
+
+ - O teorema central do limite garante que esta distribuição é Normal.
+
+## Ilustração computacional
+
+ - Na prática usamos uma distribuição normal centrada na estimativa de uma única amostra.
+
+\vspace{0.3cm}
+
+ - Com base nesta distribuição amostral estimada, fazemos inferência.
+
+\vspace{0.3cm}
+
+ - Os quantis desta distribuição garantem a confiança. Neste caso tomaremos os quantis 5% e 95% da distribuição estimada.
+
+\vspace{0.3cm}
+
+ - Se replicarmos o procedimento 100 vezes, esperamos que em 10 vezes o intervalo dado pelos quantis não contenham o valor do parâmetro.
+
+## Ilustração computacional
+
+```{r, echo=FALSE, fig.align='center', out.width='70%'}
+ ### Média e desvio padrão
+  media_amostra <- mean(amostras[,1])
+  dp_media_amostra <- sd(populacao)/sqrt(nrow(amostras))
+  
+  ### Gráfico
+  inferior <- media_amostra - dp_media_amostra
+  superior <- media_amostra + dp_media_amostra
+  
+  x <- seq(-4, 4, 
+           length = 1000) * dp_media_amostra + media_amostra
+  
+  y <- dnorm(x, media_amostra, dp_media_amostra)
+  
+  plot(x,y, 
+       type = "l", 
+       lwd = 2, 
+       axes = FALSE, 
+       xlab = "", 
+       ylab = "",
+       main = "Distribuição amostral estimada para uma amostra qualquer")
+  
+  pontos_x <- 
+    seq(-5 * dp_media_amostra + media_amostra,
+        5 * dp_media_amostra + media_amostra,
+        by = dp_media_amostra)
+  
+  axis(side = 1, at = round(pontos_x, 1), pos = 0)
+  
+  ## Adicionando quantidades no gráfico
+  
+  ### Mediana
+  abline(v = qnorm(0.5, media_amostra, 
+                   dp_media_amostra),
+         col = 2, lwd = 5)
+  
+  ### Média amostral
+  #abline(v = media_amostra,
+   #      col = 3, lwd = 5)
+  
+  ### Quantis
+  #abline(v = qnorm(c(0.025, 0.975),
+#                   media_amostra, 
+  #                 dp_media_amostra),
+ #        col = 2, lwd = 5)
+  
+  ## Verdadeira média
+  #abline(v = mean(populacao), col = 1, lwd = 5)
+  
+  legend(x = "topright", 
+       lwd = c(3,3,3), 
+       col= c(2,4,1), 
+       legend=c("Estimativa pontual",
+                "Quantis 5% e 95%",
+                "Verdadeiro valor"))
+  
+```
+## Ilustração computacional
+
+```{r, echo=FALSE, fig.align='center', out.width='70%'}
+ ### Média e desvio padrão
+  media_amostra <- mean(amostras[,1])
+  dp_media_amostra <- sd(populacao)/sqrt(nrow(amostras))
+  
+  ### Gráfico
+  inferior <- media_amostra - dp_media_amostra
+  superior <- media_amostra + dp_media_amostra
+  
+  x <- seq(-4, 4, 
+           length = 1000) * dp_media_amostra + media_amostra
+  
+  y <- dnorm(x, media_amostra, dp_media_amostra)
+  
+  plot(x,y, 
+       type = "l", 
+       lwd = 2, 
+       axes = FALSE, 
+       xlab = "", 
+       ylab = "",
+       main = "Distribuição amostral estimada para uma amostra qualquer")
+  
+  pontos_x <- 
+    seq(-5 * dp_media_amostra + media_amostra,
+        5 * dp_media_amostra + media_amostra,
+        by = dp_media_amostra)
+  
+  axis(side = 1, at = round(pontos_x, 1), pos = 0)
+  
+  ## Adicionando quantidades no gráfico
+  
+  ### Mediana
+  abline(v = qnorm(0.5, media_amostra, 
+                   dp_media_amostra),
+         col = 2, lwd = 5)
+  
+  ### Média amostral
+  #abline(v = media_amostra,
+   #      col = 3, lwd = 5)
+  
+  ### Quantis
+  abline(v = qnorm(c(0.025, 0.975),
+                   media_amostra, 
+                   dp_media_amostra),
+         col = 4, lwd = 5)
+  
+  ## Verdadeira média
+  #abline(v = mean(populacao), col = 1, lwd = 5)
+  
+  legend(x = "topright", 
+       lwd = c(3,3,3), 
+       col= c(2,4,1), 
+       legend=c("Estimativa pontual",
+                "Quantis 5% e 95%",
+                "Verdadeiro valor"))
+  
+```
+
+## Ilustração computacional
+
+```{r, echo=FALSE, fig.align='center', out.width='70%'}
+ ### Média e desvio padrão
+  media_amostra <- mean(amostras[,1])
+  dp_media_amostra <- sd(populacao)/sqrt(nrow(amostras))
+  
+  ### Gráfico
+  inferior <- media_amostra - dp_media_amostra
+  superior <- media_amostra + dp_media_amostra
+  
+  x <- seq(-4, 4, 
+           length = 1000) * dp_media_amostra + media_amostra
+  
+  y <- dnorm(x, media_amostra, dp_media_amostra)
+  
+  plot(x,y, 
+       type = "l", 
+       lwd = 2, 
+       axes = FALSE, 
+       xlab = "", 
+       ylab = "",
+       main = "Distribuição amostral estimada para uma amostra qualquer")
+  
+  pontos_x <- 
+    seq(-5 * dp_media_amostra + media_amostra,
+        5 * dp_media_amostra + media_amostra,
+        by = dp_media_amostra)
+  
+  axis(side = 1, at = round(pontos_x, 1), pos = 0)
+  
+  ## Adicionando quantidades no gráfico
+  
+  ### Mediana
+  abline(v = qnorm(0.5, media_amostra, 
+                   dp_media_amostra),
+         col = 2, lwd = 5)
+  
+  ### Média amostral
+  #abline(v = media_amostra,
+   #      col = 3, lwd = 5)
+  
+  ### Quantis
+  abline(v = qnorm(c(0.025, 0.975),
+                   media_amostra, 
+                   dp_media_amostra),
+         col = 4, lwd = 5)
+  
+  ## Verdadeira média
+  abline(v = mean(populacao), col = 1, lwd = 5)
+  
+  legend(x = "topright", 
+       lwd = c(3,3,3), 
+       col= c(2,4,1), 
+       legend=c("Estimativa pontual",
+                "Quantis 5% e 95%",
+                "Verdadeiro valor"))
+  
+```
+
+## 
+
+\textbf{O que foi visto:}
+
+ - Conceitos importantes para inferência estatística.
+ - Ideia de distribuição amostral.
+ - Distribuição amostral da média.
+ - Ilustração computacional.
+ 

@@ -1,0 +1,133 @@
+---
+title: | 
+  | \textbf{Bootstrap e Testes de Aleatorização}
+  | 
+subtitle: |
+  |
+  | Métodos Estatísticos em Pesquisa Científica (MEPC)
+author: Prof. Me. Lineu Alberto Cavazani de Freitas
+date: ""
+institute: |
+ |
+ | Departamento de Estatística
+ | Laboratório de Estatística e Geoinformação
+
+graphics: yes
+classoption: [serif, professionalfont, usenames, dvipsnames, aspectratio = 169]
+# bibliography: references.bib
+# csl: ../config/ABNT_UFPR_2011-Mendeley.csl
+output:
+  beamer_presentation:
+    fig_caption: yes
+    fig_crop: no
+    highlight: haddock
+    includes:
+      # NOTE: background, color theme and logos are defined in `preamble-rmd-settings.tex`.
+      in_header: [config/preamble-settings-rmd.tex, config/preamble-global.tex, config/preamble-chunk-rmd.tex, config/preamble-commands.tex]
+    keep_tex: yes
+# http://rmarkdown.rstudio.com/beamer_presentation_format.html
+---
+
+## Introdução
+
+ - O \textbf{avanço computacional} gerou um interesse e possibilidade de trabalhar com \textbf{inferência} estatística usando \textbf{métodos computacionalmente intensivos}.
+
+\vspace{0.3cm}
+
+ - Estes métodos se baseiam em \textbf{reamostragem} e/ou \textbf{simulação}.
+
+\vspace{0.3cm}
+
+ - São úteis quando as abordagens tradicionais não são adequadas por motivos como:
+    - Pequenas amostras.
+    - Violação de pressupostos.
+    - Problemas "novos" para os quais não foi desenvolvido um procedimento.
+
+## Introdução
+
+ - \textbf{Reamostrar} significa \textbf{amostrar várias vezes} uma série de valores a partir dos dados observados.
+
+\vspace{0.3cm}
+
+ - Dois procedimentos importantes são baseados em reamostragem: \textbf{Bootstrap} e o \textbf{Teste de Permutação}.
+
+\vspace{0.3cm}
+
+ - O \textbf{Bootstrap} é uma interessante ferramenta que permite \textbf{construir uma distribuição amostral} e usar esta distribuição para fazer inferência.
+
+\vspace{0.3cm}
+
+ - Os \textbf{Testes de Permutação} tem sua principal aplicação em problemas que envolvem \textbf{testes de hipóteses de comparação entre grupos} (diferença entre médias, proporções, variâncias, correlações, etc). Permite construir a distribuição sob $H_0$.
+ 
+# Bootstrap
+
+## Bootstrap
+
+ - A ideia do Bootstrap é \textbf{simular o processo do paradigma frequentista} porém fazendo uso de uma única amostra.
+
+\vspace{0.3cm}
+
+ - Ao invés de coletar diversas amostras, geramos reamostras da amostra original de mesmo tamanho, tomada com reposição. 
+
+\vspace{0.3cm}
+
+ - Para cada amostra, calcula-se a quantidade de interesse, gera-se a distribuição amostral e usa esta distribuição para fazer inferência (obter estimativas pontuais, intervalares, testar hipóteses).
+
+\vspace{0.3cm}
+
+ - Não se baseia em teoremas ou outras suposições distribucionais.
+
+\vspace{0.3cm}
+
+ - O número de repetições é arbitrário, mas quanto mais iterações forem feitas, mais precisas são as estimativas pontuais e intervalares.
+
+## Bootstrap
+
+ - A técnica ganhou popularidade com os artigos e livros de Bradley Efron.
+
+\vspace{0.3cm}
+
+ - Quando proposto, enfrentou considerável ceticismo.
+
+\vspace{0.3cm}
+
+ - O método não compensa pequenos tamanho de amostra, não cria novos dados nem preenche lacunas. Ele meramente parte do pressuposto que a amostra original é representativa, e gera novas amostras com variações.
+
+\vspace{0.3cm}
+
+ - Na Estatística moderna, Bootstrap tem um papel importante para avaliar propriedades de estimadores.
+
+\vspace{0.3cm}
+
+ - Na modelagem, bootstrap pode ser usado gerando conjuntos de dados como um todo, basta reamostrar as linhas.
+
+# Testes de permutação/aleatorizados
+
+## Testes de permutação/aleatorizados
+
+ - Podem ser usados para \textbf{testar hipóteses, geralmente envolvendo grupos}.
+
+\vspace{0.3cm}
+
+ - O procedimento consiste em combinar duas ou mais amostras e aleatoriamente realocar as observações em reamostras.
+
+\vspace{0.3cm}
+
+ - Pode ser feito de forma exaustiva, isto é, obter todas as possíveis combinações. 
+
+\vspace{0.3cm}
+
+ - Os testes de permutação exaustiva são práticos para tamanhos de amostra relativamente pequenos e são chamados de testes exatos. Para tamanhos grandes de amostra se tornam inviáveis
+
+## Testes de permutação/aleatorizados
+
+De modo geral:
+
+  1. Gere um único grupo com as observações de todos os grupos.
+  2. Extraia uma amostra de tamanho igual ao tamanho do grupo A.
+  3. Dos dados restantes, faça o mesmo procedimento para o grupo B.
+  4. Se houver mais grupos, repita o procedimento.
+  5. Calcule a estatística de interesse baseada nos dados da reamostra (ex: diferença entre proporções do grupo A e B) e registre.
+  6. Repita o procedimento e construa uma distribuição de probabilidades empírica. Esta é a distribuição sob hipótese nula. 
+  7. Veja onde o valor observado se encontra nesta distribuição. Se o valor observado se encontrar na área mais densa da distribuição, não há evidência de diferença, do contrário há.
+ 

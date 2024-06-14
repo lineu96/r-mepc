@@ -1,0 +1,56 @@
+
+----------
+
+INTRODUÇÃO
+
+Talvez o objetivo mais comum em Estatística seja verificar se um conjunto de variáveis está associado ao desfecho de uma outra variável e, caso aja relação, tentar fazer previsões.
+
+Esse é o objetivo dos modelos de regressão de modo geral: modelar o relacionamento entre uma variável resposta e um conjunto de explicativas e chegar a uma equação que seja capaz de nos informar quanto Y (resposta) mudará de acordo com variações nas explicativas.
+
+Existem diversas classes: como modelos lineares, modelos lineares generalizados, modelos de efeitos aleatórios, etc.
+
+A regressão linear costuma ser a primeira estratégia vista neste contexto.
+
+Durante muitos anos o LM normal teve papel de destaque no contexto dos modelos de regressão devido principalmente às suas facilidades computacionais. 
+
+Este modelo apresenta pressupostos: a variável resposta, condicional às variáveis explicativas, segue a distribuição normal, independência entre observações e a homocedasticidade.
+
+Se estes requisitos são atendidos, o modelo de regressão linear é uma boa alternativa.
+
+Tudo que foi visto em inferência será utilizado, pois o modelo verdadeiro apenas poderia ser obtidos se tivéssemos acesso à população. Como não temos, as quantidades obtidas dos modelos são estimativas (obtidas por métodos de estimação) e podem ser avaliadas por meio de intervalos de confiança e testes de hipóteses.
+
+E uma etapa importante que nós não podemos negligenciar é a avaliação do modelo, uma etapa que a gente chama de diagnóstico, isto é, verificar se o modelo que a gente escolheu está satisfatoriamente bem ajustado aos dados. E isso pode ser feito por meio da análise dos resíduos (diferença entre o observado e o predito).
+
+A análise de resíduos permite avaliar os pressupostos do modelo e também situações como presença de outliers e valores influentes. Em regressão um outlier é um registro cujo valor real é muito distante do valor previsto. Valores influentes: uma observação cuja ausência poderia alterar significativamente a equação de regressão. 
+
+----------
+
+CONSIDERAÇÕES FINAIS
+
+Adicionar mais variáveis não necessariamente significa um modelo melhor. Princípio da Navalha de Occam: se dois modelos tem o mesmo desempenho, opte pelo mais simples.
+
+Para comparação de modelos nós já vimos algumas alternativas, uma delas o AIC, uma proposta dos anos 1970, Hirotugu Akaike, um estatístico japonês. Este critério penaliza a adição de termos a um modelo e da origem a diversos outros critécios como o AICC, BIC, Cp de Mallows, entre outros.
+
+Também existem métodos para seleção automática de variáveis, suponha um problema com muitas explicativas, a regressão stepwise que inclui e exclui sucessivamente os preditores a fim de encontrar a combinação que diminua o AIC.
+
+Outra estratégia é a regressão penalizada. Incorpora-se à equação de regressão um penalizador que aproxima os coeficientes de 0. Se o efeito da variável for mínimo, com a penalização este efeito vai para 0. Métodos comuns são a regressão ridge e lasso.
+
+Variáveis explicativas categóricas entram de uma forma diferente no modelo. Modelos de regressão exigem entradas numéricas, então variáveis categóricas precisam ser devidamente registradas para entrarem no modelo. A abordagem mais comum é converter os níveis de uma variável categórica em um conjunto de variáveis dummies. Diferente da estratégia usual em aprendizado de máquina que alguns de vocês devem conhecer como one hot encoder.
+
+Em problemas de predição, costuma ser interessante trabalhar com validação cruzada, em que a ideia de modo geral é ajustar o modelo com uma parcela dos dados e reservar outra parcela apenas para testar o modelo, ou seja, verificar como o modelo se comporta quando exposto a dados que não foram usados no ajuste. Houdout, k-fold, leave one out.
+
+Intervalos de confiança medem a incerteza associada à uma estimativa obtida em uma amostra. Para os parâmetros de regressão podem ser obtidos da forma clássica (com base na distribuição amostral) ou por meio de uma estratégia bootstrap em que o modelo é ajustado a cada reamostra da amostra original.
+
+Os modelos de regressão não devem ser usados para extrapolar além da faixa dos dados. O modelo é válido apenas para valores em que existem preditoras. Do contrário, o modelo não terá informação suficiente para explicar ou prever e pode levar a conclusões equivocadas (até mesmo constrangedoras).
+
+----------
+
+Problemas com características diferentes vão fazer uso de técnicas diferentes:
+
+ - Como lidar com respostas de tipos específicos? Respostas binárias, contagens, taxas, proporções.
+ - Como lidar com problemas heterocedasticos.
+ - Como lidar com situações em que a relação entre resposta e preditora não é linear.
+ - Como lidar com situações em que as observações são dependentes? Dados repetidos, dados espaciais, dados temporais.
+
+----------
+

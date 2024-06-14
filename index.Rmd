@@ -91,6 +91,34 @@ Regressão linear com R. (31/05/2023)
 
 ---
 
+Paradigma frequentista de Inferência Estatística: ideias sobre distribuição amostral. (08/05/2024)
+
+ - [Vídeo](https://youtu.be/pQ-AknZFkzs),
+ [Slides](slides/600-intro-inferencia.pdf),[Script](aula-intro-inferencia/intro-inferencia.R), [Dados](aula-intro-inferencia/respostas-2024.csv).
+
+---
+
+Bootstrap e testes de aleatorização. (15/05/2024)
+
+ - [Vídeo](https://youtu.be/WgKfWSNaMc8),
+ [Slides](aula-bootstap-aleatorizacao/bootstrap-aleatorizacao.pdf),[Script](aula-bootstap-aleatorizacao/bootstrap-aleatorizacao.R).
+
+---
+
+Aplicação de regressão linear. (29/05/2024)
+
+ - [Vídeo](https://youtu.be/AUBjl8A-m4M),
+ [Script](aulas-mepc-regressao/regressao-linear-multipla.R).
+
+---
+
+Aplicação de modelos de regressão para dados binários e contagens. (29/05/2024)
+
+ - [Vídeo](https://youtu.be/5phWrKD3GAM),
+ [Script1](aulas-mepc-regressao/binarios.R),[Script2](aulas-mepc-regressao/contagens.R).
+ 
+---
+
 <center>
 
 <table><tr>
